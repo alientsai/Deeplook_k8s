@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: map
+  labels:
+    app: map
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: map
+  template:
+    metadata:
+     labels:
+       app: map
+    spec:
+      containers:
+      - name: map
+        image: klokantech/openmaptiles-server
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: test
+          mountPath: /data
+      volumes:
+      - name: test
+        emptyDir: {}
+#        flexVolume:
+#          driver: "fstab/cifs"
+#          fsType: "cifs"
+#          secretRef:
+#            name: "cifs-secret"
+#          options:
+#            networkPath: "//140.96.29.33/snakeeyes/mapData"
+#            mountOptions: "dir_mode=0755,file_mode=0644,noperm"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: map
+  labels:
+    app: map
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 32009
+  selector:
+    app: map
