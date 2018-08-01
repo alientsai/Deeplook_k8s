@@ -1,23 +1,23 @@
- # Deploy Docker Registry
+# Deploy Docker Registry
 > This is insecure registry !
- ## Docker Registry
+## Docker Registry
  ```
 kubectl create -f docker-registry.yaml
  ```
 
- ## Docker Registry UI
+## Docker Registry UI
  ```
  kubectl create -f ./UI/registry.yaml
  ```
 
- ## Infomation
+## Infomation
  |ServiceName|Type|container Port|Expose Port|
  |-|-|-|-|
  |registry|NodePort|5000|31115|
  |registry-ui|NodePort|80|31116|
 
 
- ## Enable Insecure registry
+## Enable Insecure registry
  
  1. Edit the daemon.json file, whose default location is `/etc/docker/daemon.json`
  If the daemon.json file does not exist, create it. Assuming there are no other settings in the file, it should have the following contents:
@@ -35,7 +35,7 @@ kubectl create -f docker-registry.yaml
  The detail can fallow [Test an insecure registry][1].
   
 
- ## Push image to registry
+## Push image to registry
 
 ```
 docker tag <target images> 140.96.29.86:31115/<image name and tag>
