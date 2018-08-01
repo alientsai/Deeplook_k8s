@@ -1,10 +1,10 @@
- # Deploy MapTile Server
+# Deploy MapTile Server
  
- ## Deploy from yaml
+## Deploy from yaml
 
- ```
+```
  kubectl create -f mapServer-deployment.yaml
- ```
+```
 
 ### Infomation
 
