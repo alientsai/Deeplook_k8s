@@ -18,25 +18,17 @@ imageTag: "9.6.2"
 
 ## Create a database user
 ## Default: postgres
-postgresUser:
-  valueFrom:
-    secretKeyRef:
-      name: database-secret
-      key: username
+postgresUser: snake_eyes
 
 ## Default: random 10 character string
-postgresPassword:
-  valueFrom:
-    secretKeyRef:
-      name: database-secret
-      key: password
+#postgresPassword:
 
 ## Inject postgresPassword via a volume mount instead of environment variable
 usePasswordFile: false
 
 ## Use Existing secret instead of creating one
 ## It must have a postgres-password key containing the desired password
-# existingSecret: 'secret'
+existingSecret: 'database-secret'
 
 ## Create a database
 ## Default: the postgres user
@@ -59,7 +51,7 @@ usePasswordFile: false
 
 ## Persist data to a persistent volume
 persistence:
-  enabled: true
+  enabled: false
 
   ## A manually managed Persistent Volume and Claim
   ## Requires persistence.enabled: true
