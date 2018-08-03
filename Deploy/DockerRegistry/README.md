@@ -11,7 +11,7 @@ kubectl create -f docker-registry.yaml
 ## Docker Registry UI
 
 ```
-kubectl create -f ./UI/registry.yaml
+kubectl create -f ./UI/registry-UI.yaml
 ```
 
 ## Infomation
