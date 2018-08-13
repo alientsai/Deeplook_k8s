@@ -41,4 +41,10 @@ you can then enable GPU support in your cluster by deploying the following Daemo
 $ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v1.11/nvidia-device-plugin.yml
 ```
 
+## 4. Check gpu on node
+
+```shell
+$ kubectl get nodes "-o=custom-columns=NAME:.metadata.name,GPU:.status.allocatable.nvidia\.com/gpu"
+```
+
 **The Detail can see [k8s-device-plugin](https://github.com/NVIDIA/k8s-device-plugin).**
