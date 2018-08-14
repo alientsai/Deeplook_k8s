@@ -2,8 +2,8 @@
  
 ## Deploy from yaml
 
-```
- kubectl create -f mapServer-deployment.yaml
+```shell
+$ kubectl create -f mapServer-deployment.yaml
 ```
 
 ### Infomation

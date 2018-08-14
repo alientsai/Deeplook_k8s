@@ -9,8 +9,8 @@ The plugin from [CIFS Flexvolume Plugin][0]
 * `mountpoint`, on Ubuntu this is in the [util-linux][3] package.
 * `base64`, on Ubuntu this is in the [coreutils][4] package.
 
-```
-apt-get install -y mount.cifs jq mountpoint base64
+```shell
+$ apt-get install -y mount.cifs jq mountpoint base64
 ```
 
 ## Installing

@@ -1,8 +1,8 @@
 # Deploy Tomcat
 
 ## Tomcat for deeplook
-```
-kubectl create -f deeplook.yaml
+```shell
+$ kubectl create -f deeplook.yaml
 ```
 ### Deeplook Pod Information
 
@@ -12,8 +12,8 @@ kubectl create -f deeplook.yaml
 |/var/www/html/|sambaURL/snakeeyes/|
 
 ## Tomcat for paas
-```
-kubectl create -f paas.yaml
+```shell
+$ kubectl create -f paas.yaml
 ```
 ### Paas Pod Information
 |Container Path|Volume|

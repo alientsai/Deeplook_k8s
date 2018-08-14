@@ -2,8 +2,8 @@
  
 ## Deploy from yaml
 
-```
- kubectl create -f pgadmin-deployment.yaml
+```shell
+ $ kubectl create -f pgadmin-deployment.yaml
 ```
 ### Default Setting
 
