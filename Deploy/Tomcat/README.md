@@ -31,3 +31,15 @@ $ kubectl create -f paas.yaml
 |-|-|-|-|
 |deeplook|NodePort|8080|32010|
 |paas|ClusterIP|8080|N/A|
+
+## Watch logs
+
+### Deeplook logs
+```shell
+$ watch kubectl logs --tail=55 -lapp=deeplook 
+```
+
+### Paas logs
+```shell
+$ watch kubectl logs --tail=55 -lapp=paas 
+```
