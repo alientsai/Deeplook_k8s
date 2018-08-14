@@ -19,9 +19,15 @@ spec:
         image: dpage/pgadmin4
         env:
         - name: PGADMIN_DEFAULT_EMAIL
-          value: admin@admin.com
+          valueFrom:
+            secretKeyRef:
+              name: pgadmin-secret
+              key: username
         - name: PGADMIN_DEFAULT_PASSWORD
-          value: admin
+          valueFrom:
+            secretKeyRef:
+              name: pgadmin-secret
+              key: password
         ports:
         - containerPort: 80
 ---
