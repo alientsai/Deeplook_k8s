@@ -21,6 +21,13 @@ spec:
         image: registry
         ports:
         - containerPort: 5000
+        volumeMounts:
+        - name: registry-local
+          mountPath: /var/lib/registry
+      volumes:
+      - name: registry-local
+        hostPath:
+          path: /registryLocal
 ---
 apiVersion: v1
 kind: Service
