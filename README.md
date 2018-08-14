@@ -31,8 +31,8 @@
 ## Plaform services
 |ServiceName|Type|container Port|Expose Port|Node label|
 |-|-|-|-|-|
-|deeplook|NodePort|8080|32010||
-|paas|ClusterIP|8080|N/A||
+|deeplook|NodePort|8080|32010|machine: storage|
+|paas|NodePort|8080|32011|machine: storage|
 |map|NodePort|80|32009|machine: storage|
 |pgadmin4|NodePort|80|32008||
 |registry|NodePort|5000|31115|machine: storage|
