@@ -16,4 +16,4 @@
 
 |ServiceName|Type|container Port|Expose Port|
 |-|-|-|-|
-|map|NodePort|80|32008|
+|pgadmin4|NodePort|80|32008|
