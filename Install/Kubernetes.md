@@ -81,6 +81,28 @@ kubeadm join --token <token> <masterIP>:6443
 $ kubeadm join 140.96.29.86:6443 --token vflgka.xugrcy4g5m0y3zbq --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4
 ```
 
+### 6. Setting labels
+
+> Each Node can't have same key label !
+
+#### Gpu node label
+
+```shell
+$ kubectl label node 990293dnn gpu=1080ti
+$ kubectl label node 990293dnn machine=gpu
+```
+
+#### Storage node label
+
+```shell
+$ kubectl label node 990293dnn machine=storage
+```
+
+#### Check labels
+```shell
+$ kubectl get node --show-labels
+```
+
 [0]: https://github.com/fstab/cifs
 [1]: https://packages.ubuntu.com/bionic/cifs-utils
 [2]: https://packages.ubuntu.com/bionic/jq
