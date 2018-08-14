@@ -14,6 +14,9 @@ spec:
      labels:
        app: engine-classify
     spec:
+      nodeSelector:
+        machine: gpu
+        gpu: 1080ti
       containers:
       - name: engine-classify
         image: 140.96.29.86:31115/classify:1.2
