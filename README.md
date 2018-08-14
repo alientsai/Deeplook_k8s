@@ -29,16 +29,16 @@
   - [Tomcat](./Deploy/Tomcat/README.md)
 
 ## Plaform services
-|ServiceName|Type|container Port|Expose Port|
-|-|-|-|-|
-|deeplook|NodePort|8080|32010|
-|paas|ClusterIP|8080|N/A|
-|map|NodePort|80|32009|
-|pgadmin4|NodePort|80|32008|
-|registry|NodePort|5000|31115|
-|registry-ui|NodePort|80|31116|
-|cityeyes-postgresql|ClusterIP|5432|N/A|
-|paas-postgresql|ClusterIP|5432|N/A|
-|mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A|
-|engine-classify|ClusterIP|80|N/A|
-|engine-clustering|ClusterIP|80|N/A|
+|ServiceName|Type|container Port|Expose Port|Node label|
+|-|-|-|-|-|
+|deeplook|NodePort|8080|32010||
+|paas|ClusterIP|8080|N/A||
+|map|NodePort|80|32009|machine: storage|
+|pgadmin4|NodePort|80|32008||
+|registry|NodePort|5000|31115|machine: storage|
+|registry-ui|NodePort|80|31116||
+|cityeyes-postgresql|ClusterIP|5432|N/A|machine: storage|
+|paas-postgresql|ClusterIP|5432|N/A|machine: storage|
+|mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||
+|engine-classify|ClusterIP|80|N/A|gpu: 1080ti, machine: gpu|
+|engine-clustering|ClusterIP|80|N/A|gpu: 1080ti, machine: gpu|
