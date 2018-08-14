@@ -14,6 +14,8 @@ spec:
      labels:
        app: paas
     spec:
+      nodeSelector:
+        machine: storage
       containers:
       - name: paas
         image: tomcat:7-jre8-alpine
