@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: engine-clustering
+  labels:
+    app: engine-clustering
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: engine-clustering
+  template:
+    metadata:
+     labels:
+       app: engine-clustering
+    spec:
+      containers:
+      - name: engine-clustering
+        image: 140.96.29.86:31115/clustering:1.0
+        command: ["/bin/bash","-c"]
+        args:
+          - cp /root/tmp_config/config.properties /root/config.properties;
+            /etc/init.d/atd start;
+            sleep 1234567;
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        volumeMounts:
+        - name: samba
+          mountPath: /var/www/html/
+        - name: config
+          mountPath: /root/tmp_config
+      volumes:
+      - name: samba
+        flexVolume:
+          driver: "fstab/cifs"
+          fsType: "cifs"
+          secretRef:
+            name: "cifs-secret"
+          options:
+            networkPath: "//140.96.29.33/snakeeyes"
+            mountOptions: "dir_mode=0755,file_mode=0644,noperm"
+      - name: config
+        configMap:
+          name: engine-clustering
+#          items:
+#          - key: config.properties
+#            path: config.properties
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: engine-clustering
+  labels:
+    app: engine-clustering
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: engine-clustering
