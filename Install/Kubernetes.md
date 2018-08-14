@@ -69,7 +69,7 @@ You can use another cni like `Calico`, `canal`, `weave` or something else you wa
 
 ## Install Minion (Worker)
 Install on `990293dnn`
-Repeat `Install Master` step [1](#1.Update-packages-and-install-some-packages), [2](#2.Install-kubelet-and-kubeadm-on-hosts) then join node.
+Repeat `Install Master` step [1](#1-update-packages-and-install-some-packages), [2](#2-install-kubelet-and-kubeadm-on-hosts) then join node.
 
 ### Join nodes
 
