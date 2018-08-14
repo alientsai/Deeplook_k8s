@@ -30,7 +30,7 @@ $ kubectl create -f paas.yaml
 |ServiceName|Type|container Port|Expose Port|
 |-|-|-|-|
 |deeplook|NodePort|8080|32010|
-|paas|ClusterIP|8080|N/A|
+|paas|NodePort|8080|32011|
 
 ## Watch logs
 
