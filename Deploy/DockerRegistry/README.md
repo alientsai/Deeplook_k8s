@@ -2,16 +2,23 @@
  
 > This is insecure registry !
 
+## Local file
+On **storage node** create folder for saving registry file.
+
+```shell
+$ mkdir /registryLocal
+```
+
 ## Docker Registry
 
-```
-kubectl create -f docker-registry.yaml
+```shell
+$ kubectl create -f docker-registry.yaml
 ```
 
 ## Docker Registry UI
 
-```
-kubectl create -f ./UI/registry-UI.yaml
+```shell
+$ kubectl create -f ./UI/registry-UI.yaml
 ```
 
 ## Infomation
@@ -32,9 +39,9 @@ If the daemon.json file does not exist, create it. Assuming there are no other s
 ```
 
 2. Restart docker
-> Don't interrupt restarting docker !
-```
- service docker restart
+> Don't interrupt restarting docker !!!
+```shell
+$ service docker restart
 ```
  
 The detail can fallow [Test an insecure registry][1]
