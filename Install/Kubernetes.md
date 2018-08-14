@@ -69,7 +69,7 @@ You can use another cni like `Calico`, `canal`, `weave` or something else you wa
 
 ## Install Minion (Worker)
 Install on `990293dnn`
-Repeat `Install Master` step 1, 2 then join node.
+Repeat `Install Master` step [1](#1.Update-packages-and-install-some-packages), [2](#2.Install-kubelet-and-kubeadm-on-hosts) then join node.
 
 ### Join nodes
 
@@ -85,4 +85,3 @@ $ kubeadm join 140.96.29.86:6443 --token vflgka.xugrcy4g5m0y3zbq --discovery-tok
 [1]: https://packages.ubuntu.com/bionic/cifs-utils
 [2]: https://packages.ubuntu.com/bionic/jq
 [3]: https://packages.ubuntu.com/bionic/util-linux
-
