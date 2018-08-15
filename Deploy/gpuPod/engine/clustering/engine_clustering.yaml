@@ -20,6 +20,9 @@ spec:
       containers:
       - name: engine-clustering
         image: 140.96.29.86:31115/clustering:1.0
+        env:
+        - name: GLOG_minloglevel
+          value: '3'
         command: ["/bin/bash","-c"]
         args:
           - cp /root/tmp_config/config.properties /root/config.properties;
