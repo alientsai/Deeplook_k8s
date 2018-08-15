@@ -26,8 +26,8 @@ spec:
           mountPath: /var/lib/registry
       volumes:
       - name: registry-local
-        hostPath:
-          path: /registryLocal
+        persistentVolumeClaim:
+         claimName: pvc-registry
 ---
 apiVersion: v1
 kind: Service
