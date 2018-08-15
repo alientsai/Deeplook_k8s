@@ -2,13 +2,6 @@
  
 > This is insecure registry !
 
-## Local file
-On **storage node** create folder for saving registry file.
-
-```shell
-$ mkdir /registryLocal
-```
-
 ## Docker Registry
 
 ```shell
@@ -21,11 +14,21 @@ $ kubectl create -f docker-registry.yaml
 $ kubectl create -f ./UI/registry-UI.yaml
 ```
 
-## Infomation
+## Service Infomation
+
 |ServiceName|Type|container Port|Expose Port|Node label|
 |-|-|-|-|-|
 |registry|NodePort|5000|31115|`machine:storage`|
 |registry-ui|NodePort|80|31116||
+
+### Volume Information
+
+|Name|pvc|hostPath|
+|-|-|-|
+|registry|`pvc-registry`|/registryBackup|
+
+## Local file
+On **storage node** will auto create folder for saving registry on `/registryBackup`
 
 ## Enable Insecure registry
 
