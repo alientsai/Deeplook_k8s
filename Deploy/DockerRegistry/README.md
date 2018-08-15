@@ -24,8 +24,8 @@ $ kubectl create -f ./UI/registry-UI.yaml
 ## Infomation
 |ServiceName|Type|container Port|Expose Port|Node label|
 |-|-|-|-|-|
-|registry|NodePort|5000|31115|machine: storage|
-|registry-ui|NodePort|80|31116|N/A|
+|registry|NodePort|5000|31115|`machine:storage`|
+|registry-ui|NodePort|80|31116||
 
 ## Enable Insecure registry
 

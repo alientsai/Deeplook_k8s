@@ -10,4 +10,4 @@ $ kubectl create -f mapServer-deployment.yaml
 
 |ServiceName|Type|container Port|Expose Port|Node label|
 |-|-|-|-|-|
-|map|NodePort|80|32009|machine: storage|
+|map|NodePort|80|32009|`machine:storage`|

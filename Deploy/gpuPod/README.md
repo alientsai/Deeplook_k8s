@@ -53,5 +53,5 @@ root@engine-XXXXXX-XXXXXX-XXXXX:/# -n 100 -f /root/log/CN\ -\ 10.244.2.42.log
 ## Service information
 |ServiceName|Type|container Port|Expose Port|Node label|
 |-|-|-|-|-|-|
-|engine-classify|ClusterIP|80|N/A|gpu: 1080ti, machine: gpu|
-|engine-clustering|ClusterIP|80|N/A|gpu: 1080ti, machine: gpu|
+|engine-classify|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
+|engine-clustering|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|

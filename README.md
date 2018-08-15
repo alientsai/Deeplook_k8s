@@ -37,17 +37,17 @@
 ## Plaform services
 |ServiceName|Type|container Port|Expose Port|Node label|
 |-|-|-|-|-|
-|deeplook|NodePort|8080|32010|machine: storage|
-|paas|NodePort|8080|32011|machine: storage|
-|map|NodePort|80|32009|machine: storage|
+|deeplook|NodePort|8080|32010|`machine:storage`|
+|paas|NodePort|8080|32011|`machine:storage`|
+|map|NodePort|80|32009|`machine:storage`|
 |pgadmin4|NodePort|80|32008||
-|registry|NodePort|5000|31115|machine: storage|
+|registry|NodePort|5000|31115|`machine:storage`|
 |registry-ui|NodePort|80|31116||
-|cityeyes-postgresql|ClusterIP|5432|N/A|machine: storage|
-|paas-postgresql|ClusterIP|5432|N/A|machine: storage|
+|cityeyes-postgresql|ClusterIP|5432|N/A|`machine:storage`|
+|paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||
-|engine-classify|ClusterIP|80|N/A|gpu: 1080ti, machine: gpu|
-|engine-clustering|ClusterIP|80|N/A|gpu: 1080ti, machine: gpu|
+|engine-classify|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
+|engine-clustering|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
 
 ## Deeplook Infra
 ![alt text](/Images/Deeplook_infra2.png "Deeplook Infra")
