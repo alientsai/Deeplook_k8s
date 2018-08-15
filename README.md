@@ -53,7 +53,7 @@
 ## Secret Information
 |Secret Name|DATA|Deploy for|
 |-|-|-|
-|database-secret|1 (postgres-password)|`cityeyes-postgresql`, `paas-postgresq`l|
+|database-secret|1 (postgres-password)|`cityeyes-postgresql`, `paas-postgresq`|
 |pagadmin-secret|2 (username, password)|`pgAdmin`|
 |cifs-secret|2 (username, password)|all the samba volume|
 
