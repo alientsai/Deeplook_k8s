@@ -4,8 +4,8 @@
 ## Engine infomation
 |Engine|CNName|Image|size|
 |-|-|-|-|
-|engine-classify|classify|registry:5000/classify:1.2|6.54G|
-|engine-clustering|clustering|registry:5000/clustering:1.0|17.6G|
+|engine-classify|classify|140.96.29.86:31115/classify:1.2|6.54G|
+|engine-clustering|clustering|140.96.29.86:31115/clustering:1.0|17.6G|
 
 ## 1. Create ConfigMaps from files
 
