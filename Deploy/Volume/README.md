@@ -24,6 +24,5 @@ $ kubectl create -f ./
 ## Check pv, pvc
 
 ```shell
-$ kubectl get pv
-$ kubectl get pvc
+$ kubectl get pv,pvc
 ```
