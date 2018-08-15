@@ -56,5 +56,15 @@
 |database-secret|1 (postgres-password)|`cityeyes-postgresql`, `paas-postgresq`l|
 |pagadmin-secret|2 (username, password)|`pgAdmin`|
 |cifs-secret|2 (username, password)|all the samba volume|
+
+## Volume Information
+
+### PersistentVolume
+|name|capacity|hostPath|storageClassName|
+|-|-|-|-|
+|pv-cityeyes|100Gi|/pgBackup_cityeyes|class-cityeyes|
+|pv-paas|100Gi|/pgBackup_paas|class-paas|
+|pv-registry|100Gi|/registryBackup|class-registry|
+
 ## Deeplook Infra
 ![alt text](/Images/Deeplook_infra2.png "Deeplook Infra")
