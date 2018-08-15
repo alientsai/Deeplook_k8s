@@ -50,5 +50,11 @@
 |engine-classify|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
 |engine-clustering|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
 
+## Secret Information
+|Secret Name|DATA|Deploy for|
+|-|-|-|
+|database-secret|1 (postgres-password)|`cityeyes-postgresql`, `paas-postgresq`l|
+|pagadmin-secret|2 (username, password)|`pgAdmin`|
+|cifs-secret|2 (username, password)|all the samba volume|
 ## Deeplook Infra
 ![alt text](/Images/Deeplook_infra2.png "Deeplook Infra")
