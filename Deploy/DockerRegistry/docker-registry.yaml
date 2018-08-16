@@ -27,7 +27,7 @@ spec:
       volumes:
       - name: registry-local
         persistentVolumeClaim:
-         claimName: pvc-registry
+          claimName: pvc-registry
 ---
 apiVersion: v1
 kind: Service
