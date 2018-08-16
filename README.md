@@ -31,6 +31,7 @@
   - [Secret](./Deploy/Secret/README.md)
   - [Tomcat](./Deploy/Tomcat/README.md)
   - [Volume](./Deploy/Volume/README.md)
+  - [EFK](./Deploy/EFK/README.md)
 
 ## Deeplook Network
 ![alt text](/Images/Cluster_network.png "Deeplook Network")
