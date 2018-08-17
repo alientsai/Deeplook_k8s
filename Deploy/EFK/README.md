@@ -24,6 +24,9 @@ $ kubectl create -f ./
 ```shell
 $ kubectl cluster-info | grep kibana
 ```
+## Kibana Setting 
+
+Follow [`Kibana Setting`](./KibanaPatternSetting.md)
 
 ## Information
 
@@ -38,3 +41,4 @@ $ kubectl cluster-info | grep kibana
 [elasticsearch]: https://www.elastic.co/products/elasticsearch
 [kibana]: https://www.elastic.co/products/kibana
 [Can not access service kibana-logging]: https://github.com/kubernetes-incubator/kubespray/issues/2349
+
