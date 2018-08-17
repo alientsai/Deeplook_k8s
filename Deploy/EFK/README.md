@@ -9,6 +9,10 @@ The files `es-service.yaml`, `es-statefulset.yaml`, `fluentd-es-configmap.yaml`,
 
 `rbac.yaml` let anonymous can access kibana.
 
+> **Note:** in order for Fluentd to work, every Kubernetes node must be labeled with beta.kubernetes.io/fluentd-ds-ready=true, as otherwise the Fluentd DaemonSet will ignore them.
+
+![alt text](/Images/kibana_logging.png "Kibana")
+
 ## Deploy
 
 ```shel
