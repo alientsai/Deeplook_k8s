@@ -60,6 +60,6 @@ root@engine-XXXXXX-XXXXXX-XXXXX:/# -n 100 -f /root/log/CN\ -\ 10.244.2.42.log
 ## Logging collection
 [Using a sidecar container with the logging agent][logging agent].
 
-![alt text](/Images/logging_with_streaming_sidecar.png "Dashboard")
+![alt text](/Images/logging_with_streaming_sidecar.png "Logging with streaming sidecar")
 
 [logging agent]: https://kubernetes.io/docs/concepts/cluster-administration/logging/#using-a-sidecar-container-with-the-logging-agent
