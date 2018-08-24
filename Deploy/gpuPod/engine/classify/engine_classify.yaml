@@ -33,7 +33,17 @@ spec:
           mountPath: /var/www/html/
         - name: config
           mountPath: /root/tmp_config
+        - name: varlog
+          mountPath: /root/log
+      - name: engine-classify-agent
+        image: busybox
+        args: [/bin/sh, -c, 'tail -n+1 -f /var/log/*.log']
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
       volumes:
+      - name: varlog
+        emptyDir: {}
       - name: samba
         flexVolume:
           driver: "fstab/cifs"
