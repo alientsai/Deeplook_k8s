@@ -17,10 +17,10 @@ $ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | g
 
 ## Access Dashboard
 
-`http://<master-ip>:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
+`http://<master-ip>:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
 
 ```
-http://140.96.29.86:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
 ```
 
 ## Use token login
