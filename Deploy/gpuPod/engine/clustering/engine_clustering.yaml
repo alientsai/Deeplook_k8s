@@ -38,7 +38,7 @@ spec:
           mountPath: /root/tmp_config
         - name: varlog
           mountPath: /root/log
-      - name: engine-classify-agent
+      - name: engine-clustering-agent
         image: busybox
         args: [/bin/sh, -c, 'tail -n+1 -f /var/log/*.log']
         volumeMounts:
