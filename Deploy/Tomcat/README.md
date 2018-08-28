@@ -1,6 +1,26 @@
 # Deploy Tomcat
 
-## Tomcat for deeplook
+**There are two kind of deploy.**
+
+## 1: Deploy from git-repository (Highly RECOMMEND)
+
+### Deploy deeplook
+```shell
+$ kubectl create -f deeplook-deploy-from-code.yaml
+```
+
+### Deploy paas
+```shell
+$ kubectl create -f paas-deploy-from-code.yaml
+```
+
+### Concept
+
+![alt text](/Images/Deploy_from_code.png "Deploy From Code")
+
+## 2: Deploy from file(.war)
+
+### Tomcat for deeplook
 ```shell
 $ kubectl create -f deeplook.yaml
 ```
@@ -11,7 +31,7 @@ $ kubectl create -f deeplook.yaml
 |/usr/local/tomcat/webapps|sambaURL/snakeeyes/webapps/deeplook|
 |/var/www/html/|sambaURL/snakeeyes/|
 
-## Tomcat for paas
+### Tomcat for paas
 ```shell
 $ kubectl create -f paas.yaml
 ```
