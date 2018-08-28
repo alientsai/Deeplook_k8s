@@ -50,6 +50,8 @@ spec:
           mountPath: /usr/local/tomcat/webapps
         - name: git-repo
           mountPath: /repo
+        - name: samba-root
+          mountPath: /var/www/html/
         ports:
         - containerPort: 8080
       volumes:
@@ -65,6 +67,15 @@ spec:
             name: "cifs-secret"
           options:
             networkPath: "//140.96.29.33/snakeeyes/mavenRepo"
+            mountOptions: "dir_mode=0755,file_mode=0644,noperm"
+      - name: samba-root
+        flexVolume:
+          driver: "fstab/cifs"
+          fsType: "cifs"
+          secretRef:
+            name: "cifs-secret"
+          options:
+            networkPath: "//140.96.29.33/snakeeyes/"
             mountOptions: "dir_mode=0755,file_mode=0644,noperm"
 ---
 apiVersion: v1
