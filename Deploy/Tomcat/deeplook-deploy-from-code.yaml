@@ -29,7 +29,7 @@ spec:
         command: ["sh","-c"]
         args:
           - cd /usr/src/mymaven/deeplook_cityeyes;
-            settingScript --mq_host mq-rabbitmq --solr_url deeplook --db_host paas-postgresql --db_name postgres --db_url paas-postgresql:5432/postgres;
+            settingScript --paas_url paas --db_url cityeyes-postgresql/postgres;
             mvn clean package -nsu -Dmaven.test.skip=true;
             cp /usr/src/mymaven/deeplook_cityeyes/target/CityEyes.war /target;
             while :; do sleep 2073600; done;
