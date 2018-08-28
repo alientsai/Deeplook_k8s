@@ -9,10 +9,28 @@
 $ kubectl create -f deeplook-deploy-from-code.yaml
 ```
 
+> Deeplook build logs
+>```shell
+>$ watch kubectl logs --tail=55 -lapp=deeplook -c build-war
+>```
+> Deeplook tomcat logs
+>```shell
+>$ watch kubectl logs --tail=55 -lapp=deeplook -c cityeyes
+>```
+
 ### Deploy paas
 ```shell
 $ kubectl create -f paas-deploy-from-code.yaml
 ```
+
+> Paas build logs
+>```shell
+>$ watch kubectl logs --tail=55 -lapp=paas -c build-war
+>```
+> Paas tomcat logs
+>```shell
+>$ watch kubectl logs --tail=55 -lapp=paas -c paas
+>```
 
 ### Concept
 
@@ -24,6 +42,12 @@ $ kubectl create -f paas-deploy-from-code.yaml
 ```shell
 $ kubectl create -f deeplook.yaml
 ```
+
+>Deeplook logs
+>```shell
+>$ watch kubectl logs --tail=55 -lapp=deeplook 
+>```
+
 ### Deeplook Pod Information
 
 |Container Path|Volume|
@@ -35,6 +59,12 @@ $ kubectl create -f deeplook.yaml
 ```shell
 $ kubectl create -f paas.yaml
 ```
+
+>Paas logs
+>```shell
+>$ watch kubectl logs --tail=55 -lapp=paas 
+>```
+
 ### Paas Pod Information
 |Container Path|Volume|
 |-|-|
@@ -56,13 +86,3 @@ $ kubectl create -f paas.yaml
 
 Watch logs from **kibana**
 `https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy` on browser.
-
-### Deeplook logs
-```shell
-$ watch kubectl logs --tail=55 -lapp=deeplook 
-```
-
-### Paas logs
-```shell
-$ watch kubectl logs --tail=55 -lapp=paas 
-```
