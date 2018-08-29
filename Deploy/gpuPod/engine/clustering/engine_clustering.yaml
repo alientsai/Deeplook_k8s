@@ -27,6 +27,8 @@ spec:
         args:
           - cp /root/tmp_config/config.properties /root/config.properties;
             /etc/init.d/atd start;
+            cd /root;
+            echo 'java -jar /root/Orchestrator-0.2.8.jar &' | at now;
             sleep 1234567;
         resources:
           limits:
