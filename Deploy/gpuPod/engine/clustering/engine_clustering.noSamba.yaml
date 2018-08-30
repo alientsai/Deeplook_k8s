@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: engine-clustering
+  labels:
+    app: engine-clustering
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: engine-clustering
+  template:
+    metadata:
+     labels:
+       app: engine-clustering
+    spec:
+      nodeSelector:
+        machine: gpu
+        gpu: 1080ti
+      containers:
+      - name: engine-clustering
+        image: aquamars00/deeplook_engine_clustering:1.1
+        env:
+        - name: GLOG_minloglevel
+          value: '3'
+        command: ["/bin/bash","-c"]
+        args:
+          - cp /root/tmp_config/config.properties /root/config.properties;
+            /etc/init.d/atd start;
+            cd /root;
+            echo 'java -jar /root/Orchestrator-0.2.8.jar &' | at now;
+            sleep 1234567;
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        volumeMounts:
+        - name: media-root
+          mountPath: /var/www/html/
+        - name: config
+          mountPath: /root/tmp_config
+        - name: varlog
+          mountPath: /root/log
+      - name: engine-clustering-agent
+        image: busybox
+        args: [/bin/sh, -c, 'tail -n+1 -f /var/log/*.log']
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+      volumes:
+      - name: varlog
+        emptyDir: {}
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-media
+      - name: config
+        configMap:
+          name: engine-clustering
+#          items:
+#          - key: config.properties
+#            path: config.properties
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: engine-clustering
+  labels:
+    app: engine-clustering
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: engine-clustering
