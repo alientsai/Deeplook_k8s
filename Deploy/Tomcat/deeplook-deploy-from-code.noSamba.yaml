@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deeplook
+  labels:
+    app: deeplook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deeplook
+  template:
+    metadata:
+     labels:
+       app: deeplook
+    spec:
+      nodeSelector:
+        machine: storage
+      initContainers:
+      - name: gitclone
+        image: alpine/git
+        command: ["sh","-c","git clone --single-branch -b develop https://2e990ac7f19037aca1b3672ee443f597a23e2995@github.com/ITRI-ICL-DivX/deeplook_cityeyes.git && sleep 2"]
+        volumeMounts:
+        - name: git-repo
+          mountPath: /git
+      containers:
+      - name: build-war
+        image: maven:3.5.4-jdk-8-alpine
+        command: ["sh","-c"]
+        args:
+          - cd /usr/src/mymaven/deeplook_cityeyes;
+            sh /usr/src/mymaven/deeplook_cityeyes/settingScript --paas_url paas --db_url cityeyes-postgresql/postgres;
+            mvn clean package -nsu -Dmaven.test.skip=true;
+            cp /usr/src/mymaven/deeplook_cityeyes/target/CityEyes.war /target;
+            while :; do sleep 2073600; done;
+        volumeMounts:
+        - name: maven-repo
+          mountPath: /root/.m2
+        - name: git-repo
+          mountPath: /usr/src/mymaven
+        - name: after-build
+          mountPath: /target
+      - name: cityeyes
+        image: tomcat:8-jre8
+        env:
+        - name: CATALINA_OPTS
+          value: "-Duser.timezone=Asia/Taipei"
+        volumeMounts:
+        - name: after-build
+          mountPath: /usr/local/tomcat/webapps
+        - name: git-repo
+          mountPath: /repo
+        - name: media-root
+          mountPath: /var/www/html/
+        ports:
+        - containerPort: 8080
+      volumes:
+      - name: git-repo
+        emptyDir: {}
+      - name: after-build
+        emptyDir: {}
+      - name: maven-repo
+        persistentVolumeClaim:
+          claimName: pvc-maven
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-media
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deeplook
+  labels:
+    app: deeplook
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 32010
+  selector:
+    app: deeplook
