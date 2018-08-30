@@ -1,22 +1,22 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-media
+  name: pv-maven
 spec:   
   capacity:
     storage: 100Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: class-media
+  storageClassName: class-maven
   hostPath:
-    path: "/var/www/html"
+    path: "/mavenRepo"
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: pvc-media
+  name: pvc-maven
 spec: 
-  storageClassName: class-media
+  storageClassName: class-maven
   accessModes:
     - ReadWriteOnce
   resources:
