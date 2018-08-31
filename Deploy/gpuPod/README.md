@@ -28,21 +28,8 @@ $ kubectl create -f ./engine/classify/engine_classify.yaml
 $ kubectl create -f ./engine/clustering/engine_clustering.yaml
 ```
 
-## 3. Start Orchestrator in container
 
-
-### Into container
 ```shell
-$ kubectl exec -it engine-XXXXXX-XXXXXX-XXXXX bash
-```
-
-### Start Orchestrator in container use atd
-```shell
-root@engine-XXXXXX-XXXXXX-XXXXX:/#  cd ~
-root@engine-XXXXXX-XXXXXX-XXXXX:/#  at now
-at> java -jar /root/Orchestrator-0.2.7.jar &
-at>
-at> <EOT>
 ```
 
 ## 4. Watch log in container
