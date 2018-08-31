@@ -55,19 +55,3 @@ spec:
       - name: config
         configMap:
           name: engine-clustering
-#          items:
-#          - key: config.properties
-#            path: config.properties
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: engine-clustering
-  labels:
-    app: engine-clustering
-spec:
-  type: ClusterIP
-  ports:
-  - port: 80
-  selector:
-    app: engine-clustering

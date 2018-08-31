@@ -52,19 +52,3 @@ spec:
       - name: config
         configMap:
           name: engine-classify
-#          items:
-#          - key: config.properties
-#            path: config.properties
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: engine-classify
-  labels:
-    app: engine-classify
-spec:
-  type: ClusterIP
-  ports:
-  - port: 80
-  selector:
-    app: engine-classify
