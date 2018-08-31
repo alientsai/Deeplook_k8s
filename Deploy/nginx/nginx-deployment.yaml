@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/bash","-c","cp /tmp_config/nginx.conf /etc/nginx/nginx.conf && nginx -s reload"]
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: media-root
+          mountPath: /usr/share/nginx/html
+        - name: nginx-config
+          mountPath: /tmp_config
+      volumes:
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-media
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+          items:
+          - key: nginx.conf
+            path: nginx.conf
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 32000
+  selector:
+    app: nginx
