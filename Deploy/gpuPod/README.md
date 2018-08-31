@@ -28,14 +28,15 @@ $ kubectl create -f ./engine/classify/engine_classify.yaml
 $ kubectl create -f ./engine/clustering/engine_clustering.yaml
 ```
 
+## 3. Watch log
 
 ```shell
+$ watch kubectl logs --tail=55 -lapp=engine-classify -c engine-classify-agent
+$ watch kubectl logs --tail=55 -lapp=engine-clustering -c engine-clustering-agent
 ```
 
-## 4. Watch log in container
-```shell
-root@engine-XXXXXX-XXXXXX-XXXXX:/# -n 100 -f /root/log/CN\ -\ 10.244.2.42.log
-```
+Watch logs from **kibana**
+`https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy` on browser.
 
 ## Service information
 |ServiceName|Type|container Port|Expose Port|Node label|
