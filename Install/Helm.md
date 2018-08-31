@@ -31,7 +31,7 @@ $ helm init
 ### RBAC
 You can follow this [tiller-and-role-based-access-control][4]
 ```shell
-$ kubectl create -f ./helm_rRbac/rbac-config.yaml
+$ kubectl create -f ./helm_rbac/rbac-config.yaml
 $ helm init --service-account tiller
 ```
 
