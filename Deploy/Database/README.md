@@ -14,7 +14,8 @@ $ helm install --name paas -f paas/values.yaml stable/postgresql
 
 ### Import sql file on container
 ```shell
-$ psql -h 0.0.0.0 -d postgres -U snake_eyes -f <file.sql>
+$ kubectl cp <file.sql> <pod name>:/root
+$ kubectl exec -it <pod name> -- psql -h 0.0.0.0 -d postgres -U snake_eyes -f /root/<file.sql>
 ```
 
 ### Service Infomation
