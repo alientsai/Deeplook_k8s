@@ -9,7 +9,7 @@ spec:
     - ReadWriteOnce
   storageClassName: class-media
   hostPath:
-    path: "/var/www/html"
+    path: "/deeplook_media"
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
