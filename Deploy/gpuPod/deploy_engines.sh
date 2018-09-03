@@ -6,6 +6,7 @@
 ENGINE=classify
 DEFAULT_NUMBER_OF_ENGINE=1
 WITHOUT_SAMBA=.noSamba
+AUTO_GEN_FOLDER=auto_gen
 #########################################################################################
 #environment configuration
 #########################################################################################
@@ -54,20 +55,20 @@ tput sgr0
 
 for ((i=0; i<${NUMBER_OF_ENGINE}; i=i+1))
 do
-    echo ${i}    
-    #Duplicate the deploy engine yaml and modify arguments
-    cp ./engine/${ENGINE}/engine_${ENGINE}${WITHOUT_SAMBA}.yaml ./engine/${ENGINE}/engine_${ENGINE}${WITHOUT_SAMBA}${i}.yaml
-    sed -i "s|engine-${ENGINE}|engine-${ENGINE}${i}|g" ./engine/${ENGINE}/engine_${ENGINE}${WITHOUT_SAMBA}${i}.yaml
-    sed -i "s|tmp_config\/config.properties|tmp_config\/config${i}.properties|g" ./engine/${ENGINE}/engine_${ENGINE}${WITHOUT_SAMBA}${i}.yaml
-
-    #Deploy engine
-    #kubectl create -f ./engine/${ENGINE}/engine_${ENGINE}${WITHOUT_SAMBA}${i}.yaml
-
+    echo -e "Generate ${ORANGE}${ENGINE} Engine ${PURPLE}${i}"
     #Duplicate the engine config file and modify CNNName
-    cp ./engine/${ENGINE}/config.properties ./engine/${ENGINE}/config${i}.properties
-    sed -i "s|CNName=${ENGINE}|CNName=${ENGINE}${i}|g" ./engine/${ENGINE}/config${i}.properties
+    cp ./engine/${ENGINE}/config.properties ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
+    sed -i "s|CNName=${ENGINE}|CNName=${ENGINE}_${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
 
     #Deploy configmap
-    kubectl create configmap engine-${ENGINE}${i} --from-file=./engine/${ENGINE}/config${i}.properties
+    kubectl create configmap engine-${ENGINE}-${i} --from-file=./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
+
+    #Duplicate the deploy engine yaml and modify arguments
+    cp ./engine/${ENGINE}/engine_${ENGINE}${WITHOUT_SAMBA}.yaml ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
+    sed -i "s|engine-${ENGINE}|engine-${ENGINE}-${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
+    sed -i "s|tmp_config\/config.properties|tmp_config\/config_${i}.properties|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
+
+    #Deploy engine
+    kubectl create -f ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
 done
 
