@@ -48,8 +48,8 @@
 |cityeyes-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||`default`|
-|engine-classify|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
-|engine-clustering|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
+|engine-classify|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
+|engine-clustering|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
 |elasticsearch-logging|ClusterIP|9200|N/A||`kube-system`|
 |kibana-logging|ClusterIP|5601|N/A||`kube-system`|
 
