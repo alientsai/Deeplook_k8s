@@ -59,6 +59,7 @@ tput sgr0
 echo
 mkdir ./engine/${ENGINE}/${AUTO_GEN_FOLDER}
 echo -e "Create folder ./engine/${ENGINE}/${ORANGE_PS3}${AUTO_GEN_FOLDER}"
+echo
 tput sgr0
 
 for ((i=0; i<${NUMBER_OF_ENGINE}; i=i+1))
