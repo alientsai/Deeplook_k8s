@@ -59,7 +59,7 @@ tput sgr0
 
 for ((i=0; i<${NUMBER_OF_ENGINE}; i=i+1))
 do
-    echo -e "Generate ${ORANGE}${ENGINE} Engine ${PURPLE}${i}"
+    echo -e "Generate ${ORANGE}${ENGINE} Engine ${PURPLE}${i}${WHITE}"
     #Duplicate the engine config file and modify CNNName
     cp ./engine/${ENGINE}/config.properties ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
     sed -i "s|CNName=${ENGINE}|CNName=${ENGINE}_${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
