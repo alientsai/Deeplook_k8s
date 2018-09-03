@@ -28,11 +28,13 @@ do
     tput sgr0
     case $opt in
         "Classify")
-            echo -e "Selected ${GREEN}Classify ${WHITE}Engine"            
+            echo -e "Selected ${GREEN}Classify ${WHITE}Engine"
+            echo            
             break
             ;;
         "Clustering")
             echo -e "Selected ${GREEN}Clustering ${WHITE}Engine"
+            echo
             ENGINE=clustering
             break
             ;;
@@ -48,25 +50,27 @@ if [[ $use_aks =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo
 fi
 
+echo
 read -p "Enter number of engines (Default: [$DEFAULT_NUMBER_OF_ENGINE] ): " NUMBER_OF_ENGINE
 NUMBER_OF_ENGINE=${NUMBER_OF_ENGINE:-$DEFAULT_NUMBER_OF_ENGINE}
 echo -e "Will deploy ${GREEN}${NUMBER_OF_ENGINE} ${WHITE}engines"
 tput sgr0
 
+echo
 mkdir ./engine/${ENGINE}/${AUTO_GEN_FOLDER}
 echo -e "Create folder ./engine/${ENGINE}/${ORANGE_PS3}${AUTO_GEN_FOLDER}"
 tput sgr0
 
 for ((i=0; i<${NUMBER_OF_ENGINE}; i=i+1))
 do
-    echo -e "Generate ${ORANGE}${ENGINE} Engine ${PURPLE}${i}${WHITE}"
+    echo -e "Deploying ${ORANGE}${ENGINE} Engine ${PURPLE}${i}${WHITE}"
     #Duplicate the engine config file and modify CNNName
     cp ./engine/${ENGINE}/config.properties ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
     sed -i "s|CNName=${ENGINE}|CNName=${ENGINE}_${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
 
     #Deploy configmap
     kubectl create configmap engine-${ENGINE}-${i} --from-file=./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
-
+    
     #Duplicate the deploy engine yaml and modify arguments
     cp ./engine/${ENGINE}/engine_${ENGINE}${WITHOUT_SAMBA}.yaml ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
     sed -i "s|engine-${ENGINE}|engine-${ENGINE}-${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
@@ -74,5 +78,6 @@ do
 
     #Deploy engine
     kubectl create -f ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
+    echo
 done
 
