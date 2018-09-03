@@ -27,7 +27,7 @@
           - clustering
   - [MapTileServer](./Deploy/MapTileServer/README.md)
   - [pgAdmin](./Deploy/pgAdmin/README.md)
-  - [Rabbitmq](./Deploy/Rabbitmq/README.md)
+  - [Rabbitmq](./Deploy/rabbitmq/README.md)
   - [Secret](./Deploy/Secret/README.md)
   - [Tomcat](./Deploy/Tomcat/README.md)
   - [Volume](./Deploy/Volume/README.md)
