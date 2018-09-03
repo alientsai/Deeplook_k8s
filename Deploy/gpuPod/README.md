@@ -38,7 +38,7 @@ $ ./deploy_engines.sh
 
 **Follow the video**
 
-[![asciicast](https://asciinema.org/a/23EKq3ASszDubjOXepm0pxNp2.png)](https://asciinema.org/a/23EKq3ASszDubjOXepm0pxNp2)
+[![asciicast](https://asciinema.org/a/Z8qfeVL8XAaQpFA6BF685rrGD.png)](https://asciinema.org/a/Z8qfeVL8XAaQpFA6BF685rrGD)
 
 ```shell
 $ kubectl create -f ./engine/classify/engine_classify.yaml
