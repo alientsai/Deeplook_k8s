@@ -23,6 +23,23 @@ $ kubectl get configmap engine-classify -o yaml
 
 ## 2. Deploy engine
 
+Execute script `deploy_engines.sh` for deploying multi engines.
+
+### Step 1: Change privilege of script
+
+```shell
+$ chmod 755 ./deploy_engines.sh
+```
+### Step 2. Execut script
+
+```shell
+$ ./deploy_engines.sh
+```
+
+**Follow the video**
+
+[![asciicast](https://asciinema.org/a/23EKq3ASszDubjOXepm0pxNp2.png)](https://asciinema.org/a/23EKq3ASszDubjOXepm0pxNp2)
+
 ```shell
 $ kubectl create -f ./engine/classify/engine_classify.yaml
 $ kubectl create -f ./engine/clustering/engine_clustering.yaml
