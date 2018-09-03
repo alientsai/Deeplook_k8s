@@ -103,6 +103,22 @@ $ kubectl label node 990293dnn machine=storage
 $ kubectl get node --show-labels
 ```
 
+## Additional
+
+### Enabling shell auto completion
+
+```shell
+$ apt-get install -y bash-completion
+$ echo "source <(kubectl completion bash)" >> ~/.bashrc
+$ source <(kubectl completion bash)
+```
+
+### 5.	Enable scheduling pods on the master
+
+```shell
+$ kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+
 [0]: https://github.com/fstab/cifs
 [1]: https://packages.ubuntu.com/bionic/cifs-utils
 [2]: https://packages.ubuntu.com/bionic/jq
