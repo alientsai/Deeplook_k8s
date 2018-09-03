@@ -60,6 +60,18 @@
 |pagadmin-secret|2 (username, password)|`pgAdmin`|
 |cifs-secret|2 (username, password)|all the samba volume|
 
+## Service URL
+|ServiceName|URL|
+|-|-|
+|deeplook_paas|http://140.96.29.86:32011/PaaS|
+|deeplook_cityeyes|http://140.96.29.86:32010/CityEyes|
+|OpenMap Tiles Map Server|http://140.96.29.86:32009|
+|pgAdmin4|http://140.96.29.86:32008|
+|Docker Registry UI|http://140.96.29.86:31116|
+|kibana|https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy/|
+|kubernetes-dashboard|https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/|
+
+
 ## Volume Information
 
 ### PersistentVolume
