@@ -53,6 +53,10 @@ NUMBER_OF_ENGINE=${NUMBER_OF_ENGINE:-$DEFAULT_NUMBER_OF_ENGINE}
 echo -e "Will deploy ${GREEN}${NUMBER_OF_ENGINE} ${WHITE}engines"
 tput sgr0
 
+mkdir ./engine/${ENGINE}/${AUTO_GEN_FOLDER}
+echo -e "Create folder ./engine/${ENGINE}/${ORANGE_PS3}${AUTO_GEN_FOLDER}"
+tput sgr0
+
 for ((i=0; i<${NUMBER_OF_ENGINE}; i=i+1))
 do
     echo -e "Generate ${ORANGE}${ENGINE} Engine ${PURPLE}${i}"
