@@ -16,3 +16,10 @@ $ kubectl create -f ./
 ```shell
 $ kuberctl get secret
 ```
+
+## Create Secret Manually
+
+```shell
+$ echo -n 'admin' | base64
+YWRtaW4=
+```
