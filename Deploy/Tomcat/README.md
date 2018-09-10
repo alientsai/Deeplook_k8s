@@ -6,7 +6,7 @@
 
 ### Deploy deeplook
 ```shell
-$ kubectl create -f deeplook-deploy-from-code.yaml
+$ kubectl create -f ./deeplook/deeplook-deploy-from-code.yaml
 ```
 
 > Deeplook build logs
@@ -20,7 +20,7 @@ $ kubectl create -f deeplook-deploy-from-code.yaml
 
 ### Deploy paas
 ```shell
-$ kubectl create -f paas-deploy-from-code.yaml
+$ kubectl create -f ./paas/paas-deploy-from-code.yaml
 ```
 
 > Paas build logs
@@ -70,11 +70,32 @@ $ kubectl create -f paas.yaml
 |-|-|
 |/usr/local/tomcat/webapps|sambaURL/snakeeyes/webapps/paas|
 
+## Deploy Tomcat for ACL
+
+### 1. Create configmap from file
+
+```shell
+$ kubectl create configmap acl-config --from-file=./acl/config/
+```
+
+Check configmap
+
+```shell
+$ kubectl get configmap acl-config
+$ kubectl get configmap acl-config -o yaml
+```
+### 2. Deploy tomcat for acl
+
+```shell
+$ kubectl create -f ./acl/acl.yaml
+```
+
 ## Image Information
 |PodName|Container Image|
 |-|-|
 |deeplook|tomcat:8-jre8|
 |paas|tomcat:7-jre8-alpine|
+|acl|aquamars00/deeplook_acl:1.0|
 
 ## Service Infomation
 |ServiceName|Type|container Port|Expose Port|
