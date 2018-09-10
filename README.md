@@ -30,6 +30,9 @@
   - [Rabbitmq](./Deploy/rabbitmq/README.md)
   - [Secret](./Deploy/Secret/README.md)
   - [Tomcat](./Deploy/Tomcat/README.md)
+      - deeplook
+      - paas
+      - acl
   - [Volume](./Deploy/Volume/README.md)
   - [EFK](./Deploy/EFK/README.md)
 
