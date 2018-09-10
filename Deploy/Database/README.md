@@ -1,13 +1,13 @@
-# Deploy Database postgrsql
- 
-## Using Helm
+# Deploy Database
 
-### Cityeyes database
+## Cityeyes database
+Use `Helm` install.
 ```shell
 $ helm install --name cityeyes -f cityeyes/values.yaml stable/postgresql
 ```
  
-### PaaS database
+## PaaS database
+Use `Helm` install.
 ```shell
 $ helm install --name paas -f paas/values.yaml stable/postgresql
 ```
