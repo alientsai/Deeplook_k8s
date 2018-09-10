@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<proxool>
+  <alias>jdbc/ACLServicePool</alias>
+  <driver-url>jdbc:mysql://140.96.29.86:3306/acl_2018?useUnicode=true&amp;characterEncoding=utf8</driver-url>
+  <driver-class>com.mysql.jdbc.Driver</driver-class>
+  <driver-properties>
+    <property name="user" value="root"/>
+    <property name="password" value="password"/>
+  </driver-properties>
+  <maximum-connection-count>20</maximum-connection-count>
+  <house-keeping-test-sql>select CURRENT_DATE</house-keeping-test-sql>
+</proxool>
+
