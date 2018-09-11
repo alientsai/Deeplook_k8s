@@ -14,7 +14,7 @@ $ kubectl create -f ./
 ## Check secret
 
 ```shell
-$ kuberctl get secret
+$ kubectl get secret
 ```
 
 ## Create Secret Manually
