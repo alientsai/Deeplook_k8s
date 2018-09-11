@@ -19,7 +19,7 @@ spec:
       initContainers:
       - name: gitclone
         image: alpine/git
-        command: ["sh","-c","git clone --single-branch -b develop https://2e990ac7f19037aca1b3672ee443f597a23e2995@github.com/ITRI-ICL-DivX/deeplook_cityeyes.git && sleep 2"]
+        command: ["sh","-c","rm -rf /git/* && git clone --single-branch -b develop https://2e990ac7f19037aca1b3672ee443f597a23e2995@github.com/ITRI-ICL-DivX/deeplook_cityeyes.git && sleep 2"]
         volumeMounts:
         - name: git-repo
           mountPath: /git
