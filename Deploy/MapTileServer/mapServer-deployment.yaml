@@ -22,11 +22,12 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: test
+        - name: map-data
           mountPath: /data
       volumes:
-      - name: test
-        emptyDir: {}
+      - name: map-data
+        persistentVolumeClaim:
+          claimName: pvc-map
 #        flexVolume:
 #          driver: "fstab/cifs"
 #          fsType: "cifs"
