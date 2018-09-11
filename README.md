@@ -10,7 +10,7 @@
 
 ## Project Outline
 
-- Install
+- [Install](./Install/README.md)
   - [Kubernetes](./Install/Kubernetes.md)
   - [GPUforKubernetes](./Install/GPUforKubernetes.md)
   - [CifsPlugin](./Install/CifsPlugin.md)
@@ -44,6 +44,7 @@
 |-|-|-|-|-|-|
 |deeplook|NodePort|8080|32010|`machine:storage`|`default`|
 |paas|NodePort|8080|32011|`machine:storage`|`default`|
+|acl|clusterIP|8080|N/A|`machine:storage`|`default`|
 |map|NodePort|80|32009|`machine:storage`|`default`|
 |pgadmin4|NodePort|80|32008||`default`|
 |registry|NodePort|5000|31115|`machine:storage`|`default`|
