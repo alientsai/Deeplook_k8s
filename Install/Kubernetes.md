@@ -2,7 +2,7 @@
 
 ## Node information
 |Hostername|OS|IP|
-| - | - | - | - |
+| - | - | - |
 |a4050302-un62|Ubuntu 16.04|140.96.29.86|
 |990293dnn|Ubuntu 16.04|140.96.29.171|
 
