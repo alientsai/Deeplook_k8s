@@ -59,7 +59,12 @@ $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-### 5. Install CNI
+### 5. setting KUBECONFIG
+```shell
+$ export KUBECONFIG=$HOME/.kube/config
+```
+
+### 6. Install CNI
 
 ```shell
 $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
