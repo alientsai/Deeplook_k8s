@@ -5,6 +5,9 @@
 ## 1: Deploy from git-repository (Highly RECOMMEND)
 
 ### Deploy deeplook
+
+> Need change the `IP` in `yaml` !
+
 ```shell
 $ kubectl create -f ./deeplook/deeplook-deploy-from-code.yaml
 ```
@@ -73,6 +76,8 @@ $ kubectl create -f paas.yaml
 ## Deploy Tomcat for ACL
 
 ### 1. Create configmap from file
+
+> Need change the `IP` in `./acl/config/proxool.xml` !
 
 ```shell
 $ kubectl create configmap acl-config --from-file=./acl/config/
