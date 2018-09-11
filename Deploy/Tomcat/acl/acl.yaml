@@ -41,9 +41,8 @@ metadata:
   labels:
     app: acl
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
-    nodePort: 32012
   selector:
     app: acl
