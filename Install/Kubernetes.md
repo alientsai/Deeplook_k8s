@@ -86,7 +86,7 @@ kubeadm join --token <token> <masterIP>:6443
 $ kubeadm join 140.96.29.86:6443 --token vflgka.xugrcy4g5m0y3zbq --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4
 ```
 
-### 6. Setting labels
+### 7. Setting labels
 
 > Each Node can't have same key label !
 
@@ -118,7 +118,7 @@ $ echo "source <(kubectl completion bash)" >> ~/.bashrc
 $ source <(kubectl completion bash)
 ```
 
-### 5.	Enable scheduling pods on the master
+### Enable scheduling pods on the master
 
 ```shell
 $ kubectl taint nodes --all node-role.kubernetes.io/master-
