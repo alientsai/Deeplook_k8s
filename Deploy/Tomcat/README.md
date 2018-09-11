@@ -102,6 +102,7 @@ $ kubectl create -f ./acl/acl.yaml
 |-|-|-|-|
 |deeplook|NodePort|8080|32010|
 |paas|NodePort|8080|32011|
+|acl|clusterIP|8080|N/A|
 
 ## Watch logs
 
