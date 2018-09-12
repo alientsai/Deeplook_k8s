@@ -21,14 +21,14 @@ spec:
         image: aquamars00/deeplook_acl:1.0
         command: ["sh","-c"]
         args:
-          - cp /root/tmp_config/proxool.xml /usr/share/apache-tomcat-8.5.23/bin/proxool.xml;
-            cd usr/share/apache-tomcat-8.5.23/bin/ && sh catalina.sh start;
+          - cd usr/share/apache-tomcat-8.5.23/bin/ && sh catalina.sh start;
             sleep 1234567;
         ports:
         - containerPort: 8080
         volumeMounts:
         - name: config
-          mountPath: /root/tmp_config
+          mountPath: /usr/share/apache-tomcat-8.5.23/bin/proxool.xml
+          subPath: proxool.xml
       volumes:
       - name: config
         configMap:

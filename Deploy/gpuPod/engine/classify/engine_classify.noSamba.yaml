@@ -22,8 +22,7 @@ spec:
         image: aquamars00/deeplook_engine_classify:1.2
         command: ["/bin/bash","-c"]
         args:
-          - cp /root/tmp_config/config.properties /root/config.properties;
-            /etc/init.d/atd start;
+          - /etc/init.d/atd start;
             cd /root;
             echo 'java -jar /root/Orchestrator-0.2.7.jar &' | at now;
             sleep 1234567;
@@ -34,7 +33,8 @@ spec:
         - name: media-root
           mountPath: /var/www/html/
         - name: config
-          mountPath: /root/tmp_config
+          mountPath: /root/config.properties
+          subPath: config.properties
         - name: varlog
           mountPath: /root/log
       - name: engine-classify-agent
