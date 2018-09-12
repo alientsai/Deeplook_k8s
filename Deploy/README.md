@@ -28,5 +28,4 @@ Inculdes `Deeplook`, `PaaS`, `ACL`
   - [ACL](./Tomcat/README.md#deploy-tomcat-for-acl)
   - [PaaS](./Tomcat/README.md#deploy-paas)
   - [deeplook](./Tomcat/README.md#deploy-deeplook)
-> Deeplook NEED change IP in `yaml` \
-> ACL NEED change IP in `proxool.xml`
+> Deeplook NEED change IP in `yaml` 
