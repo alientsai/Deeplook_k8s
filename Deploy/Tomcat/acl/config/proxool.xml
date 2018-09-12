@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <proxool>
   <alias>jdbc/ACLServicePool</alias>
-  <driver-url>jdbc:mysql://140.96.29.86:3306/acl_2018?useUnicode=true&amp;characterEncoding=utf8</driver-url>
+  <driver-url>jdbc:mysql://acldb:3306/acl_2018?useUnicode=true&amp;characterEncoding=utf8</driver-url>
   <driver-class>com.mysql.jdbc.Driver</driver-class>
   <driver-properties>
     <property name="user" value="root"/>
