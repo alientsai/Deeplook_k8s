@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acldb
+  labels:
+    app: acldb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acldb
+  template:
+    metadata:
+     labels:
+       app: acldb
+    spec:
+      nodeSelector:
+        machine: storage
+      containers:
+      - name: acl-db
+        image: aquamars00/deeplook_acl_database:1.0
+        command: ["sh","-c"]
+        args:
+          - /etc/init.d/mysql start;
+            sleep 1234567;
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: acl-data
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: acl-data
+        persistentVolumeClaim:
+          claimName: pvc-acl
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: acldb
+  labels:
+    app: acldb
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3306
+  selector:
+    app: acldb
