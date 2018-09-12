@@ -15,7 +15,7 @@
   - [GPUforKubernetes](./Install/GPUforKubernetes.md)
   - [CifsPlugin](./Install/CifsPlugin.md)
   - [Helm](./Install/Helm.md)
-- Deploy
+- [Deploy](./Deploy/README.md)
   - [Database](./Deploy/Database/README.md)
       - cityeyes
       - paas
