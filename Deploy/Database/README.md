@@ -30,7 +30,7 @@ $ kubectl create -f ./acl/acl-database-deploy.yaml
 |-|-|-|-|-|
 |cityeyes-postgresql|ClusterIP|5432|N/A|`machine:storage`|
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|
-|acl_db (docker container)|N/A|3306|3306|N/A|
+|acldb|ClusterIP|3306|N/A|`machine:storage`|
 
 ## Volume Information
 
@@ -38,6 +38,7 @@ $ kubectl create -f ./acl/acl-database-deploy.yaml
 |-|-|-|
 |cityeyes-postgresql|`pvc-cityeyes`|/pgBackup_cityeyes|
 |paas-postgresql|`pvc-paas`|/pgBackup_paas|
+|acldb|`pvc-acl`|/mysqlBackup_acl|
 
 ## Local file
 On **storage node** will auto create folder for saving pgData on `/pgBackup_cityeyes`, `/pgBackup_paas`
