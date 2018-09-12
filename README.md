@@ -83,7 +83,11 @@
 |-|-|-|-|
 |pv-cityeyes|100Gi|/pgBackup_cityeyes|class-cityeyes|
 |pv-paas|100Gi|/pgBackup_paas|class-paas|
+|pv-acl|100Gi|/mysqlBackup_acl|class-acl|
 |pv-registry|100Gi|/registryBackup|class-registry|
+|pv-map|100Gi|/mapBackup|class-map|
+|pv-maven|100Gi|/mavenRepo|class-maven|
+|pv-media|100Gi|/deeplook_media|class-media|
 
 ### PersistentVolumeClaim
 
@@ -91,7 +95,11 @@
 |-|-|-|
 |pvc-cityeyes|100Gi|class-cityeyes|
 |pvc-paas|100Gi|class-paas|
+|pvc-acl|100Gi|class-acl|
 |pvc-registry|100Gi|class-registry|
+|pvc-map|100Gi|class-map|
+|pvc-maven|100Gi|class-maven|
+|pvc-media|100Gi|class-media|
 
 ## Deeplook Infra
 ![alt text](/Images/Deeplook_infra2.png "Deeplook Infra")
