@@ -51,6 +51,7 @@
 |registry-ui|NodePort|80|31116||`default`|
 |cityeyes-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
+|acldb|ClusterIP|3306|N/A|`machine:storage`|`default`|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||`default`|
 |engine-classify|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
 |engine-clustering|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
