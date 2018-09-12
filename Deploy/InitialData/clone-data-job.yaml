@@ -17,6 +17,7 @@ spec:
             cp -r /tmp/mapBackup/. /mapBackup;
             cp -r /tmp/deeplook_media/. /deeplook_media;
             cp -r /tmp/mavenRepo/. /mavenRepo;
+            cp -r /tmp/mysqlBackup_acl/. /mysqlBackup_acl;
         volumeMounts:
         - name: map-data
           mountPath: /mapBackup
@@ -28,6 +29,8 @@ spec:
           mountPath: /pgBackup_cityeyes
         - name: paas-db
           mountPath: /pgBackup_paas
+        - name: acl-db
+          mountPath: /mysqlBackup_acl
       volumes:
       - name: map-data
         persistentVolumeClaim:
@@ -44,5 +47,8 @@ spec:
       - name: cityeyes-db
         persistentVolumeClaim:
           claimName: pvc-cityeyes
+      - name: acl-db
+        persistentVolumeClaim:
+          claimName: pvc-acl
       restartPolicy: Never
   backoffLimit: 2
