@@ -20,14 +20,8 @@ $ kubectl exec -it <pod name> -- psql -h 0.0.0.0 -d postgres -U snake_eyes -f /r
 
 ## ACL database
 
-The database port must be `3306` or api can't get DB.
-(No ACL source code for changing this bug.)
-
-Using docker container for deploying ACL database.
-
 ```shell
-$ docker run -it -d --name acl_db -p  3306:3306 aquamars00/deeplook_acl_database:1.0
-$ docker exec -it acl_db /etc/init.d/mysql start
+$ kubectl create -f ./acl/acl-database-deploy.yaml
 ```
 
 ## Service Infomation
