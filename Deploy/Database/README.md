@@ -41,4 +41,4 @@ $ kubectl create -f ./acl/acl-database-deploy.yaml
 |acldb|`pvc-acl`|/mysqlBackup_acl|
 
 ## Local file
-On **storage node** will auto create folder for saving pgData on `/pgBackup_cityeyes`, `/pgBackup_paas`
+On **storage node** will auto create folder for saving Data on `/pgBackup_cityeyes`, `/pgBackup_paas` and `/mysqlBackup_acl`.
