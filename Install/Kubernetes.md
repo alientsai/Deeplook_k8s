@@ -44,8 +44,10 @@ $ apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 ```shell
 $ sudo swapoff -a 
 ```
-> Disable Swap
+> Disable Swap forever
 > ref : http://www.dayexie.com/detail1298500.html
+> 
+> Change `/etc/fstab`, comment `swap` then `reboot`>  
 
 Initial from kubeadm
 ```shell
@@ -73,12 +75,25 @@ $ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Docum
 You can use another cni like `Calico`, `canal`, `weave` or something else you wanted.
 
 ## Install Minion (Worker)
+
 Install on `990293dnn`
-Repeat `Install Master` step [1](#1-update-packages-and-install-some-packages), [2](#2-install-kubelet-and-kubeadm-on-hosts) then join node.
+Repeat `Install Master` step :
+- [1. Update packages and install some packages](#1-update-packages-and-install-some-packages)
+- [2. Install kubelet and kubeadm on hosts](#2-install-kubelet-and-kubeadm-on-hosts) then join node.
+
+> Need disable swap first !!
+
+```shell
+$ sudo swapoff -a 
+```
+> Disable Swap forever
+> ref : http://www.dayexie.com/detail1298500.html
+> 
+> Change `/etc/fstab`, comment `swap` then `reboot`>  
 
 ### Join nodes
 
-**On master record command:**
+**On `master` copy command:**
 
 ```sh
 $ kubeadm token create --print-join-command
@@ -86,7 +101,7 @@ $ kubeadm token create --print-join-command
 # `kubeadm join 140.96.29.86:6443 --token fzuf2f.ihdf67ai1rg2y578 --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4`
 ```
 
-**On minion node:**
+**On `minion node`:**
 
 ```shell
 $ kubeadm join 140.96.29.86:6443 --token fzuf2f.ihdf67ai1rg2y578 --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4
