@@ -22,18 +22,20 @@ $ helm help
 
 ## Install Tiller
 
-### Basic
-Bascially, You only need:
-```shell
-$ helm init
-```
-
-### RBAC
+### RBAC install
 You can follow this [tiller-and-role-based-access-control][4]
 ```shell
 $ kubectl create -f ./helm_rbac/rbac-config.yaml
 $ helm init --service-account tiller
 ```
+
+<!-- ### Basic install
+Bascially, You only need:
+```shell
+$ helm init
+``` -->
+
+
 
 [1]: https://docs.helm.sh/using_helm/#installing-helm
 [2]: https://docs.helm.sh/using_helm/#installing-the-helm-client
