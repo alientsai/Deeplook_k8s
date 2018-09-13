@@ -78,12 +78,18 @@ Repeat `Install Master` step [1](#1-update-packages-and-install-some-packages), 
 
 ### Join nodes
 
-```
-kubeadm join --token <token> <masterIP>:6443
+**On master record command:**
+
+```sh
+$ kubeadm token create --print-join-command
+# Copy follow command:
+# `kubeadm join 140.96.29.86:6443 --token fzuf2f.ihdf67ai1rg2y578 --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4`
 ```
 
+**On minion node:**
+
 ```shell
-$ kubeadm join 140.96.29.86:6443 --token vflgka.xugrcy4g5m0y3zbq --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4
+$ kubeadm join 140.96.29.86:6443 --token fzuf2f.ihdf67ai1rg2y578 --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4
 ```
 
 ### 7. Setting labels
@@ -104,6 +110,7 @@ $ kubectl label node 990293dnn machine=storage
 ```
 
 #### Check labels
+
 ```shell
 $ kubectl get node --show-labels
 ```
@@ -123,6 +130,19 @@ $ source <(kubectl completion bash)
 ```shell
 $ kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
+
+<!-- ### Create Token for join node
+
+```shell
+$ kubeadm token create
+$ kubeadm token list
+```
+
+### Get token ca cert hash
+
+```shell
+$ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+``` -->
 
 [0]: https://github.com/fstab/cifs
 [1]: https://packages.ubuntu.com/bionic/cifs-utils
