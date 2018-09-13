@@ -11,20 +11,26 @@ $ apt-get update
 $ apt-get install -y docker.io
 ```
 
-Or install Docker CE 17.03
+Or install Docker CE 18.06
 
 ```shell
 $ apt-get update
 $ apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | $ apt-key add -
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 $ add-apt-repository "deb https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
-$ apt-get update && apt-get install -y docker-ce=$(apt-cache madison docker-ce | grep 17.03 | head -1 | awk '{print $3}')
+$ apt-get update && apt-get install -y docker-ce=$(apt-cache madison docker-ce | grep 18.06 | head -1 | awk '{print $3}')
 ```
 
 The more detail can referrer [install-kubadm/installing-docker][k8s-install-docker] and [install-docker-ce][install-docker-ce]
 
-## 2. nvidia-Docker
+## 2. nvidia Driver (GPU Node)
 
+Reference: 
+- https://blog.csdn.net/CosmosHua/article/details/76644029
+- https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07
+
+
+## 3. nvidia-Docker (GPU Node)
 
 #### Ubuntu 14.04/16.04/18.04, Debian Jessie/Stretch
 ```sh
@@ -56,7 +62,7 @@ See [Kubernetes.md](./Install/Kubernetes.md)
 ## 4. GPU for Kubernetes
 See [GPUforKubernetes.md](./Install/GPUforKubernetes.md)
 
-## 5. Helm
+## 5. Helm (Master)
 > Use RBAC install
 See [Helm.md](./Install/Helm.md) 
 
