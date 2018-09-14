@@ -21,7 +21,8 @@ spec:
         image: aquamars00/deeplook_acl_database:1.0
         command: ["sh","-c"]
         args:
-          - /etc/init.d/mysql start;
+          - chmod 777 -R /var/lib/mysql;
+            /etc/init.d/mysql start;
             sleep 1234567;
         ports:
         - containerPort: 3306
