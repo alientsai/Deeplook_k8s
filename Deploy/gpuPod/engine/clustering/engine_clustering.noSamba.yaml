@@ -25,7 +25,8 @@ spec:
           value: '3'
         command: ["/bin/bash","-c"]
         args:
-          - /etc/init.d/atd start;
+          - ln -s -f /root/tmp_config/config.properties /root/config.properties;
+            /etc/init.d/atd start;
             cd /root;
             echo 'java -jar /root/Orchestrator-0.2.8.jar &' | at now;
             sleep 1234567;
@@ -36,8 +37,7 @@ spec:
         - name: media-root
           mountPath: /var/www/html/
         - name: config
-          mountPath: /root/config.properties
-          subPath: config.properties
+          mountPath: /root/tmp_config
         - name: varlog
           mountPath: /root/log
       - name: engine-clustering-agent
