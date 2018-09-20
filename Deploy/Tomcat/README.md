@@ -1,12 +1,12 @@
 # Deploy Tomcat
 
-## Deploy Tomcat for ACL
-
 ## **Deploy Order :**
 
 1. [ACL](./README.md#deploy-tomcat-for-acl)
 2. [PaaS](./README.md#deploy-paas)
 3. [Deeplook](./README.md#deploy-deeplook)
+
+## Deploy Tomcat for ACL
 
 ### 1. Create configmap from file
 
