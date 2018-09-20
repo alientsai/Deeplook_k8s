@@ -30,7 +30,7 @@ spec:
       volumes:
       - name: media-root
         persistentVolumeClaim:
-          claimName: pvc-media
+          claimName: pvc-nfs
       - name: nginx-config
         configMap:
           name: nginx-config
