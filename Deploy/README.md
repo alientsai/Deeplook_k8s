@@ -12,14 +12,18 @@
 - See [Database](./Database/README.md) \
 Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 
-## 4. Rabbitmq, Map and nginx
-- See [Rabbitmq](./Rabbitmq/README.md)
+## 4. NFS (Use SAMBA skip this step.)
+
+- See [NFS](./NFS/README.md)
+
+## 5. Rabbitmq, Map and nginx
+- See [Rabbitmq](./rabbitmq/README.md)
 
 - See [MapTileServer](./MapTileServer/README.md)
 
 - See [nginx](./nginx/README.md) (Use SAMBA can ignore this.)
 
-## 5. Tomcat
+## 6. Tomcat
 
 > If system without samba use `noSamba` `yaml`
 
