@@ -24,6 +24,23 @@ $ kubectl exec -it <pod name> -- psql -h 0.0.0.0 -d postgres -U snake_eyes -f /r
 $ kubectl create -f ./acl/acl-database-deploy.yaml
 ```
 
+## Remove cityeyes database
+Use `Helm` remove.
+```
+$ helm delete --purge cityeyes
+```
+
+## Remove paas database
+Use `Helm` remove.
+```
+$ helm delete --purge paas
+```
+
+## Remove ACL database
+```
+$ kubectl delete -f ./acl/acl-database-deploy.yaml
+```
+
 ## Service Infomation
 
 |ServiceName|Type|container Port|Expose Port|Node label|

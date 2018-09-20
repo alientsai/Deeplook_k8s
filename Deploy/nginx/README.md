@@ -17,6 +17,19 @@ $ kubectl get configmap nginx-config -o yaml
 $ kubectl create -f nginx-deployment.yaml
 ```
 
+## Remove nginx
+
+```shell
+$ kubectl delete -f nginx-deployment.yaml
+```
+
+## Remove nginx configmap
+
+```shell
+$  kubectl delete configmap nginx-config
+```
+
+
 ## Watch Log
 
 ```shell

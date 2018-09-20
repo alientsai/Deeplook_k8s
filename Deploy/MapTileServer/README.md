@@ -6,6 +6,12 @@
 $ kubectl create -f mapServer-deployment.yaml
 ```
 
+## Remove MapTile Server
+
+```shell
+$ kubectl delete -f mapServer-deployment.yaml
+```
+
 ### Infomation
 
 |ServiceName|Type|container Port|Expose Port|Node label|
