@@ -51,7 +51,7 @@ spec:
         emptyDir: {}
       - name: media-root
         persistentVolumeClaim:
-          claimName: pvc-media
+          claimName: pvc-nfs
       - name: config
         configMap:
           name: engine-clustering
