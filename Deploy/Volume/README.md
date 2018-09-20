@@ -16,6 +16,8 @@ $ kubectl create -f ./
 |pv-map|100Gi|/mapBackup|class-map|
 |pv-maven|100Gi|/mavenRepo|class-maven|
 |pv-media|100Gi|/deeplook_media|class-media|
+|pv-nfs|100Gi|N/A (pvc-media)|class-nfs|
+|pv-nfs-maven|100Gi|N/A (pvc-maven)|class-nfs-maven|
 
 ### PersistentVolumeClaim
 
@@ -28,6 +30,8 @@ $ kubectl create -f ./
 |pvc-map|100Gi|class-map|
 |pvc-maven|100Gi|class-maven|
 |pvc-media|100Gi|class-media|
+|pvc-nfs|100Gi|class-nfs|
+|pvc-nfs-maven|100Gi|class-nfs-maven|
 
 ## Check pv, pvc
 
