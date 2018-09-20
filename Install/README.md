@@ -57,15 +57,17 @@ $ docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
 The more detail can referrer [nvidia-docker][nvidia-docker#quickstart] and [Docker Engine setup][Docker Engine setup]
 
 ## 3. Kubernetes
-See [Kubernetes.md](./Install/Kubernetes.md)
+See [Kubernetes.md](./Kubernetes.md)
 
 ## 4. GPU for Kubernetes
-See [GPUforKubernetes.md](./Install/GPUforKubernetes.md)
+See [GPUforKubernetes.md](./GPUforKubernetes.md)
 
 ## 5. Helm (Master)
 > Use RBAC install
-See [Helm.md](./Install/Helm.md) 
+See [Helm.md](./Helm.md) 
 
+## Troubleshooting
+See [Troubleshooting](./Troubleshooting.md)
 
 [k8s-install-docker]: https://kubernetes.io/docs/setup/independent/install-kubeadm/#installing-docker
 [install-docker-ce]: https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce
