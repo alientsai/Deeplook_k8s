@@ -57,7 +57,7 @@ Watch logs from **kibana**
 
 ## Service information
 |ServiceName|Type|container Port|Expose Port|Node label|
-|-|-|-|-|-|-|
+|-|-|-|-|-|
 |engine-classify|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
 |engine-clustering|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
 
