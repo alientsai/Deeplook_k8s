@@ -49,10 +49,14 @@
 |pgadmin4|NodePort|80|32008||`default`|
 |registry|NodePort|5000|31115|`machine:storage`|`default`|
 |registry-ui|NodePort|80|31116||`default`|
+|cityeyes-postgresql-expose|ClusterIP|5432|32006||`default`|
+|paas-postgresql-expose|ClusterIP|5432|32004||`default`|
+|acldb-expose|ClusterIP|3306|32004||`default`|
 |cityeyes-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |acldb|ClusterIP|3306|N/A|`machine:storage`|`default`|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||`default`|
+|mq-rabbitmq-expose|NodePort|15672|32007||`default`|
 |nfs-server|ClusterIP(10.100.95.27)|2049, 20048, 111|N/A|`machine:storage`|`default`|
 |nfs-maven-server|ClusterIP(10.100.55.66)|2049, 20048, 111|N/A|`machine:storage`|`default`|
 |engine-classify|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
