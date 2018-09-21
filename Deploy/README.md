@@ -2,7 +2,7 @@
 
 ## 1. Volume & Sercet
 - See [Volume](./Volume/README.md)
-- See [Sercet](./Sercet/README.md)
+- See [Secret](./Secret/README.md)
 
 ## 2. Initial Data
 
