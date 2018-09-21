@@ -40,3 +40,10 @@ $ systemctl status kubelet.service
 ```shell
 $ rm -r /var/lib/kubelet/pods/xxx-xx-xx
 ```
+
+# Pods stuck at terminating status
+Ref: [Pods stuck at terminating status](https://stackoverflow.com/questions/35453792/pods-stuck-at-terminating-status)
+
+```shell
+$ kubectl delete pod NAME --grace-period=0 --force
+```
