@@ -42,6 +42,10 @@ $ ./deploy_engines.sh
 
 ## 3. Watch log
 
+According to different engine number need add number on `lapp` and `-c`.
+
+e.g.: `watch kubectl logs --tail=55 -lapp=engine-classify-0 -c engine-classify-0-agent`
+
 ```shell
 $ watch kubectl logs --tail=55 -lapp=engine-classify -c engine-classify-agent
 $ watch kubectl logs --tail=55 -lapp=engine-clustering -c engine-clustering-agent
