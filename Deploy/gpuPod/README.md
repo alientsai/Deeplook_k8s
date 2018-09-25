@@ -40,11 +40,6 @@ $ ./deploy_engines.sh
 
 [![asciicast](https://asciinema.org/a/Z8qfeVL8XAaQpFA6BF685rrGD.png)](https://asciinema.org/a/Z8qfeVL8XAaQpFA6BF685rrGD)
 
-```shell
-$ kubectl create -f ./engine/classify/engine_classify.yaml
-$ kubectl create -f ./engine/clustering/engine_clustering.yaml
-```
-
 ## 3. Watch log
 
 ```shell
