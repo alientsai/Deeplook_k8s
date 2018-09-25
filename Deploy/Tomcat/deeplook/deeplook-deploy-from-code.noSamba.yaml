@@ -65,7 +65,7 @@ spec:
           claimName: pvc-maven
       - name: media-root
         persistentVolumeClaim:
-          claimName: pvc-media
+          claimName: pvc-nfs
 ---
 apiVersion: v1
 kind: Service
