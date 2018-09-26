@@ -77,9 +77,9 @@
 |ServiceName|URL|
 |-|-|
 |deeplook_cityeyes|http://140.96.29.86|
-|deeplook_paas|http://140.96.29.86/`PaaS`/|
-|OpenMap Tiles Map Server|http://140.96.29.86/`map`/|
-|Rabbitmq manager|http://140.96.29.86/`rabbitmq`/|
+|deeplook_paas|http://140.96.29.86/PaaS/|
+|OpenMap Tiles Map Server|http://140.96.29.86/map/|
+|Rabbitmq manager|http://140.96.29.86/rabbitmq/|
 |pgAdmin4|http://140.96.29.86:32008|
 |Docker Registry UI|http://140.96.29.86:31116|
 |kibana|https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy/|
