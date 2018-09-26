@@ -47,7 +47,7 @@
 |deeplook|ClusterIP|8080|N/A|`machine:storage`|`default`|
 |paas|ClusterIP|8080|N/A|`machine:storage`|`default`|
 |acl|ClusterIP|8080|N/A|`machine:storage`|`default`|
-|map|NodePort|80|32009|`machine:storage`|`default`|
+|map|ClusterIP|80|N/A|`machine:storage`|`default`|
 |pgadmin4|NodePort|80|32008||`default`|
 |registry|NodePort|5000|31115|`machine:storage`|`default`|
 |registry-ui|NodePort|80|31116||`default`|
