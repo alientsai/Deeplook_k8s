@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/add-base-url: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: manage
+  namespace: default
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /media/
+            backend:
+              serviceName: nginx
+              servicePort: 80
+          - path: /map/
+            backend:
+              serviceName: map
+              servicePort: 80
+          - path: /rabbitmq
+            backend:
+              serviceName: mq-rabbitmq
+              servicePort: 15672
