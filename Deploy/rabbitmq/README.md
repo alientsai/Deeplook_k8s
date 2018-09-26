@@ -19,6 +19,6 @@ $ kubectl create -f mq-svc.yaml
 |ServiceName|Type|container Port|Expose Port|
 |-|-|-|-|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A|
-|mq-rabbitmq-expose|NodePort|15672|32007|
+|mq-rabbitmq-expose|NodePort|5672|32007|
 
 [1]:https://hub.kubeapps.com/charts/stable/rabbitmq
