@@ -42,9 +42,9 @@
 ## Plaform services
 |ServiceName|Type|container Port|Expose Port|Node label|namespaces|
 |-|-|-|-|-|-|
-|deeplook|NodePort|8080|32010|`machine:storage`|`default`|
-|paas|NodePort|8080|32011|`machine:storage`|`default`|
-|acl|clusterIP|8080|N/A|`machine:storage`|`default`|
+|deeplook|ClusterIP|8080|N/A|`machine:storage`|`default`|
+|paas|ClusterIP|8080|N/A|`machine:storage`|`default`|
+|acl|ClusterIP|8080|N/A|`machine:storage`|`default`|
 |map|NodePort|80|32009|`machine:storage`|`default`|
 |pgadmin4|NodePort|80|32008||`default`|
 |registry|NodePort|5000|31115|`machine:storage`|`default`|

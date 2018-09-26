@@ -110,8 +110,8 @@ $ kubectl create -f deeplook.yaml
 ## Service Infomation
 |ServiceName|Type|container Port|Expose Port|
 |-|-|-|-|
-|deeplook|NodePort|8080|32010|
-|paas|NodePort|8080|32011|
+|deeplook|clusterIP|8080|N/A|
+|paas|clusterIP|8080|N/A|
 |acl|clusterIP|8080|N/A|
 
 ## Watch logs

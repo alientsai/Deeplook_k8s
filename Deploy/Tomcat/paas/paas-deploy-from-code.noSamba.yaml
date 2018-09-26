@@ -68,9 +68,8 @@ metadata:
   labels:
     app: paas
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
-    nodePort: 32011
   selector:
     app: paas

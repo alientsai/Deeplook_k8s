@@ -74,9 +74,8 @@ metadata:
   labels:
     app: deeplook
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
-    nodePort: 32010
   selector:
     app: deeplook
