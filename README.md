@@ -35,6 +35,8 @@
       - acl
   - [Volume](./Deploy/Volume/README.md)
   - [EFK](./Deploy/EFK/README.md)
+  - [nginx](./Deploy/nginx/README.md)
+  - [Ingress](./Deploy/Ingress/README.md)
 
 ## Deeplook Network
 ![alt text](/Images/Cluster_network.png "Deeplook Network")
