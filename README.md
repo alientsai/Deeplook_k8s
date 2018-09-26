@@ -56,7 +56,7 @@
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |acldb|ClusterIP|3306|N/A|`machine:storage`|`default`|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||`default`|
-|mq-rabbitmq-expose|NodePort|15672|32007||`default`|
+|mq-rabbitmq-expose|NodePort|5672|32007||`default`|
 |nfs-server|ClusterIP(10.100.95.27)|2049, 20048, 111|N/A|`machine:storage`|`default`|
 |nfs-maven-server|ClusterIP(10.100.55.66)|2049, 20048, 111|N/A|`machine:storage`|`default`|
 |engine-classify|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
