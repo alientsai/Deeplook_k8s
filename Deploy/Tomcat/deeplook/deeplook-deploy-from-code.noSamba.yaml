@@ -62,7 +62,7 @@ spec:
         emptyDir: {}
       - name: maven-repo
         persistentVolumeClaim:
-          claimName: pvc-maven
+          claimName:  pvc-nfs-maven
       - name: media-root
         persistentVolumeClaim:
           claimName: pvc-nfs

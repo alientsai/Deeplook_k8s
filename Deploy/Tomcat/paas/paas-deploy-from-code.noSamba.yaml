@@ -59,7 +59,7 @@ spec:
         emptyDir: {}
       - name: maven-repo
         persistentVolumeClaim:
-          claimName: pvc-maven
+          claimName: pvc-nfs-maven
 ---
 apiVersion: v1
 kind: Service
