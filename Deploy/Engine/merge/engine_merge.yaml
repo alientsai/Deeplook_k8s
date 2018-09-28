@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: engine-merge
+  labels:
+    app: engine-merge
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: engine-merge
+  template:
+    metadata:
+     labels:
+       app: engine-merge
+    spec:
+      nodeSelector:
+        machine: storage        
+      containers:
+      - name: engine-merge
+        image: aquamars00/deeplook_engine_merge:1.1
+        command: ["/bin/bash","-c"]
+        args:
+          - ln -s -f /root/tmp_config/config.properties /root/config.properties;
+            /etc/init.d/atd start;
+            cd /root;
+            echo 'java -jar /root/Orchestrator-0.2.6.jar &' | at now;
+            sleep 1234567;
+        volumeMounts:
+        - name: media-root
+          mountPath: /var/www/html/
+        - name: config
+          mountPath: /root/tmp_config
+        - name: varlog
+          mountPath: /root/log
+      - name: engine-merge-agent
+        image: busybox
+        args: [/bin/sh, -c, 'tail -n0 -F /var/log/*']
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+      volumes:
+      - name: varlog
+        emptyDir: {}
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-nfs
+      - name: config
+        configMap:
+          name: engine-merge
