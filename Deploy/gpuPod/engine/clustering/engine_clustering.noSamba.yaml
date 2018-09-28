@@ -42,7 +42,7 @@ spec:
           mountPath: /root/log
       - name: engine-clustering-agent
         image: busybox
-        args: [/bin/sh, -c, 'tail -n+1 -f /var/log/*.log']
+        args: [/bin/sh, -c, 'tail -n0 -F /var/log/*']
         volumeMounts:
         - name: varlog
           mountPath: /var/log
