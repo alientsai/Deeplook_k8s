@@ -10,11 +10,11 @@ metadata:
   namespace: default
 spec:
   ports:
-  - name: stats
-    nodePort: 32007
-    port: 5672
-    protocol: TCP
-    targetPort: stats
+    - name: amqp
+      nodePort: 31072
+      port: 5672
+      protocol: TCP
+      targetPort: amqp
   selector:
     app: rabbitmq
     release: mq
