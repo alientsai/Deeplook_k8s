@@ -18,13 +18,13 @@ spec:
         machine: storage        
       containers:
       - name: engine-merge
-        image: aquamars00/deeplook_engine_merge:1.1
+        image: aquamars00/deeplook_engine_merge:1.2
         command: ["/bin/bash","-c"]
         args:
           - ln -s -f /root/tmp_config/config.properties /root/config.properties;
             /etc/init.d/atd start;
             cd /root;
-            echo 'java -jar /root/Orchestrator-0.2.6.jar &' | at now;
+            echo 'java -jar /root/Orchestrator-0.2.8.jar &' | at now;
             sleep 1234567;
         volumeMounts:
         - name: media-root
