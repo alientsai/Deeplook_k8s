@@ -19,7 +19,7 @@ spec:
         gpu: 1080ti
       containers:
       - name: engine-clustering
-        image: 140.96.29.86:31115/clustering:1.0
+        image: 140.96.29.86:31115/clustering:1.2
         env:
         - name: GLOG_minloglevel
           value: '3'

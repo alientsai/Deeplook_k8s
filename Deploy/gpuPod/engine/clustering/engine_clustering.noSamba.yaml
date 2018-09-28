@@ -19,7 +19,7 @@ spec:
         gpu: 1080ti
       containers:
       - name: engine-clustering
-        image: aquamars00/deeplook_engine_clustering:1.1
+        image: aquamars00/deeplook_engine_clustering:1.2
         env:
         - name: GLOG_minloglevel
           value: '3'
