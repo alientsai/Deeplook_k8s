@@ -47,3 +47,20 @@ Ref: [Pods stuck at terminating status](https://stackoverflow.com/questions/3545
 ```shell
 $ kubectl delete pod NAME --grace-period=0 --force
 ```
+
+
+# Drop table without delete database
+
+ref: [drop-all-tables-in-postgresql](https://stackoverflow.com/questions/3327312/drop-all-tables-in-postgresql)
+
+SQL query:
+
+```sql
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO public;
+```
+
+# Window engine
+## samba need mount on `Z://`
