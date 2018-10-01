@@ -32,12 +32,21 @@ Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 > If system without samba use `noSamba` `yaml`
 
 - See [Tomcat](./Tomcat/README.md) \
-Inculdes `Deeplook`, `PaaS`, `ACL`
+Inculdes `Deeplook`, `PaaS`, `ACL` \
+Order:
   - [ACL](./Tomcat/README.md#deploy-tomcat-for-acl)
   - [PaaS](./Tomcat/README.md#deploy-paas)
   - [deeplook](./Tomcat/README.md#deploy-deeplook)
 > Deeplook NEED change IP in `yaml` 
 
-## 8. Engine (When `GPU` node available)
+## 8. Merge Engine
+
+- See [Engine](./engine/README.md)
+
+## 9. GPU Engine (When `GPU` node available)
 
 - See [gpuPod](./gpuPod/README.md)
+
+## 10. Samba (If use windows engine)
+
+- See [Samba](./Samba/README.md)
