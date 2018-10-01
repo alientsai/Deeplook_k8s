@@ -23,6 +23,7 @@ spec:
         args:
           - ln -s -f /root/tmp_config/config.properties /root/config.properties;
             /etc/init.d/atd start;
+            chmod 777 /root/Orchestrator-0.2.8.jar;
             cd /root;
             echo 'java -jar /root/Orchestrator-0.2.8.jar &' | at now;
             sleep 1234567;
