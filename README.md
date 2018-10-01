@@ -21,6 +21,8 @@
       - paas
   - [DockerRegistry](./Deploy/DockerRegistry/README.md)
       - UI
+  - [Engine](./Deploy/Engine/README.md)
+      - merge
   - [gpuPod](./Deploy/gpuPod/README.md)
       - engine
           - classify
@@ -37,6 +39,7 @@
   - [EFK](./Deploy/EFK/README.md)
   - [nginx](./Deploy/nginx/README.md)
   - [Ingress](./Deploy/Ingress/README.md)
+  - [Samba](./Deploy/Samba/README.md)
 
 ## Deeplook Network
 ![alt text](/Images/Cluster_network.png "Deeplook Network")
