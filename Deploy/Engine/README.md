@@ -21,4 +21,4 @@ $ watch kubectl logs --tail=55 -lapp=engine-merge -c engine-merge-agent
 ## Engine infomation
 |Engine|CNName|Image|
 |-|-|-|
-|engine-merge|merge|[aquamars00/deeplook_engine_merge:1.1](https://hub.docker.com/r/aquamars00/deeplook_engine_merge/)|
+|engine-merge|merge|[aquamars00/deeplook_engine_merge:1.2](https://hub.docker.com/r/aquamars00/deeplook_engine_merge/)|
