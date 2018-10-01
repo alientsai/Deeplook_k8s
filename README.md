@@ -51,11 +51,8 @@
 |paas|ClusterIP|8080|N/A|`machine:storage`|`default`|
 |acl|ClusterIP|8080|N/A|`machine:storage`|`default`|
 |map|ClusterIP|80|N/A|`machine:storage`|`default`|
-|pgadmin4|NodePort|80|32008||`default`|
-|registry|NodePort|5000|31115|`machine:storage`|`default`|
-|registry-ui|NodePort|80|31116||`default`|
 |cityeyes-postgresql-expose|ClusterIP|5432|32006||`default`|
-|paas-postgresql-expose|ClusterIP|5432|32004||`default`|
+|paas-postgresql-expose|ClusterIP|5432|32005||`default`|
 |acldb-expose|ClusterIP|3306|32004||`default`|
 |cityeyes-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
@@ -68,6 +65,9 @@
 |engine-clustering|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
 |elasticsearch-logging|ClusterIP|9200|N/A||`kube-system`|
 |kibana-logging|ClusterIP|5601|N/A||`kube-system`|
+|pgadmin4|NodePort|80|32008||`default`|
+|registry|NodePort|5000|31115|`machine:storage`|`default`|
+|registry-ui|NodePort|80|31116||`default`|
 
 ## Secret Information
 |Secret Name|DATA|Deploy for|
