@@ -9,7 +9,7 @@ spec:
         machine: storage
       containers:
       - name: data
-        image: aquamars00/deeplook_data:1.1
+        image: aquamars00/deeplook_data:1.2
         command: ["sh",  "-c"]
         args:
           - cp -r /tmp/pgBackup_paas/. /pgBackup_paas;
