@@ -62,6 +62,13 @@ $ kubectl create -f ./deeplook/deeplook-deploy-from-code.yaml
 >$ watch kubectl logs --tail=55 -lapp=deeplook -c cityeyes
 >```
 
+### Project information
+
+|Project|branch/tag|
+|-|-|
+|[ITRI-ICL-DivX/deeplook_cityeyes](https://github.com/ITRI-ICL-DivX/deeplook_cityeyes)|[v1.1.0](https://github.com/ITRI-ICL-DivX/deeplook_cityeyes/tree/v1.1.0)|
+|[ITRI-ICL-DivX/deeplook_paas](https://github.com/ITRI-ICL-DivX/deeplook_paas)|[develop](https://github.com/ITRI-ICL-DivX/deeplook_paas/tree/develop)|
+
 ### Concept
 
 ![alt text](/Images/Deploy_from_code.png "Deploy From Code")
