@@ -18,7 +18,7 @@ spec:
         machine: storage
       containers:
       - name: map
-        image: klokantech/openmaptiles-server
+        image: klokantech/openmaptiles-server:1.8
         ports:
         - containerPort: 80
         volumeMounts:
