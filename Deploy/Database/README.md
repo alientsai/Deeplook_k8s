@@ -11,12 +11,16 @@ Use `Helm` install.
 ```shell
 $ helm install --name cityeyes -f cityeyes/values.yaml stable/postgresql
 ```
- 
+
+ The detail can see [kube apphub stable/postgresql](https://hub.kubeapps.com/charts/stable/postgresql)
+
 ## PaaS database
 Use `Helm` install.
 ```shell
 $ helm install --name paas -f paas/values.yaml stable/postgresql
 ```
+
+ The detail can see [kube apphub stable/postgresql](https://hub.kubeapps.com/charts/stable/postgresql)
 
 ## Expose database
 

@@ -6,7 +6,7 @@
 $ helm install --name mq -f values.yaml stable/rabbitmq --version 1.1.9
 ```
  
-The detail can see [kube apphub Rabbitmq][1]
+The detail can see [kube apphub stable/rabbitmq][1]
 
 ## Expose manage port
 
