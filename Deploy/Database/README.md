@@ -61,7 +61,7 @@ $ kubectl delete -f db-expose.yaml
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|
 |acldb|ClusterIP|3306|N/A|`machine:storage`|
 |cityeyes-postgresql-expose|ClusterIP|5432|32006||
-|paas-postgresql-expose|ClusterIP|5432|32004||
+|paas-postgresql-expose|ClusterIP|5432|32005||
 |acldb-expose|ClusterIP|3306|32004||
 
 ## Volume Information
