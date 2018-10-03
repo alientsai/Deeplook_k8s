@@ -18,6 +18,7 @@ Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 
 ## 5. Rabbitmq, Map and nginx
 - See [Rabbitmq](./rabbitmq/README.md)
+  (Don't forget create queues: [create queues](./rabbitmq/README.md#using-script-create-queues))
 
 - See [MapTileServer](./MapTileServer/README.md)
 
