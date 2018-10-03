@@ -22,6 +22,19 @@ $ curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/bin
 $  apt-get install -qy kubelet=1.11.2-00 kubectl=1.11.2-00 kubeadm=1.11.2-00
 ```
 
+# kubeadm reset
+
+## Stuck on [reset] unmounting mounted directories in "/var/lib/kubelete"
+Ref: [kubeadm blocks when removing managed containers](https://kubernetes.io/docs/setup/independent/troubleshooting-kubeadm/#kubeadm-blocks-when-removing-managed-containers)
+
+```shell
+$ # if you install NFS
+$ apt-get autoremove nfs-common nfs-kernel-server 
+$ # You can reboot after remove nfs package
+$ systemctl restart docker.service
+$ kubeadm reset
+```
+
 # Check Kubelet
 
 ## Check kubelet log
@@ -64,3 +77,10 @@ GRANT ALL ON SCHEMA public TO public;
 
 # Window engine
 ## samba need mount on `Z://`
+
+# Docker
+
+## Delete all container
+```shell
+$ docker rm $(docker ps -a -q)
+```
