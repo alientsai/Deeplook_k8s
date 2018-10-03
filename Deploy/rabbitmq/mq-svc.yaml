@@ -15,6 +15,11 @@ spec:
       port: 5672
       protocol: TCP
       targetPort: amqp
+    - name: stats
+      nodePort: 31075
+      port: 15672
+      protocol: TCP
+      targetPort: stats
   selector:
     app: rabbitmq
     release: mq
