@@ -14,6 +14,12 @@ The detail can see [kube apphub stable/rabbitmq][1]
 $ kubectl create -f mq-svc.yaml
 ```
 
+## Using script Create queues
+
+```shell
+$ sh ./setQueues.sh
+```
+
 ## Service Infomation
 
 |ServiceName|Type|container Port|Expose Port|
