@@ -29,6 +29,10 @@ $ kubectl delete -f nginx-deployment.yaml
 $  kubectl delete configmap nginx-config
 ```
 
+## Service Infomation
+|ServiceName|Type|container Port|Expose Port|
+|-|-|-|-|
+|nginx|ClusterIP|80|N/A|
 
 ## Watch Log
 
