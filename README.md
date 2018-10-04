@@ -57,6 +57,7 @@
 |cityeyes-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |acldb|ClusterIP|3306|N/A|`machine:storage`|`default`|
+|nginx|ClusterIP|80|N/A||`default`|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||`default`|
 |mq-rabbitmq-expose|NodePort|5672|32007||`default`|
 |nfs-server|ClusterIP(10.100.95.27)|2049, 20048, 111|N/A|`machine:storage`|`default`|
