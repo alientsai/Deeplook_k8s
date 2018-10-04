@@ -32,7 +32,7 @@ $ kubectl create -f ./acl/acl.yaml
 
 ### Deploy paas
 ```shell
-$ kubectl create -f ./paas/paas-deploy-from-code.yaml
+$ kubectl create -f ./paas/paas-deploy-from-code.noSamba.yaml
 ```
 
 > Paas build logs
@@ -50,7 +50,7 @@ $ kubectl create -f ./paas/paas-deploy-from-code.yaml
 > Need change the `IP` in `yaml` !
 
 ```shell
-$ kubectl create -f ./deeplook/deeplook-deploy-from-code.yaml
+$ kubectl create -f ./deeplook/deeplook-deploy-from-code.noSamba.yaml
 ```
 
 > Deeplook build logs
