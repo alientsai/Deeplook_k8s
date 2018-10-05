@@ -12,7 +12,7 @@
 - See [Database](./Database/README.md) \
 Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 
-## 4. NFS (Use SAMBA skip this step.)
+## 4. NFS
 
 - See [NFS](./NFS/README.md)
 
@@ -22,7 +22,7 @@ Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 
 - See [MapTileServer](./MapTileServer/README.md)
 
-- See [nginx](./nginx/README.md) (Use SAMBA can ignore this.)
+- See [nginx](./nginx/README.md)
 
 ## 6. Ingress
 
@@ -30,7 +30,7 @@ Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 
 ## 7. Tomcat
 
-> If system without samba use `noSamba` `yaml`
+> Use `noSamba` `yaml`
 
 - See [Tomcat](./Tomcat/README.md) \
 Inculdes `Deeplook`, `PaaS`, `ACL` \
