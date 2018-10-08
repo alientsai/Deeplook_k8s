@@ -22,7 +22,7 @@ Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 
 - See [MapTileServer](./MapTileServer/README.md)
 
-- See [nginx](./nginx/README.md)
+- See [nginx](./nginx/README.md) (Need create configmap before deploy)
 
 ## 6. Ingress
 
@@ -35,7 +35,7 @@ Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 - See [Tomcat](./Tomcat/README.md) \
 Inculdes `Deeplook`, `PaaS`, `ACL` \
 Order:
-  - [ACL](./Tomcat/README.md#deploy-tomcat-for-acl)
+  - [ACL](./Tomcat/README.md#deploy-tomcat-for-acl) (Need create configmap before deploy)
   - [PaaS](./Tomcat/README.md#deploy-paas)
   - [deeplook](./Tomcat/README.md#deploy-deeplook)
 > Deeplook NEED change IP in `yaml` 
