@@ -5,7 +5,6 @@
 #########################################################################################
 ENGINE=classify
 DEFAULT_NUMBER_OF_ENGINE=1
-WITHOUT_SAMBA=.noSamba
 AUTO_GEN_FOLDER=auto_gen
 #########################################################################################
 #environment configuration
@@ -41,15 +40,6 @@ do
     esac
 done
 
-echo -e "${BLUE}Are you deploying with Samba?"
-tput sgr0
-read -p "Y/N [N]: " use_aks
-if [[ $use_aks =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  WITHOUT_SAMBA=''
-  echo -e "The engine deploy ${GREEN}with samba"
-  echo
-fi
-
 echo
 read -p "Enter number of engines (Default: [$DEFAULT_NUMBER_OF_ENGINE] ): " NUMBER_OF_ENGINE
 NUMBER_OF_ENGINE=${NUMBER_OF_ENGINE:-$DEFAULT_NUMBER_OF_ENGINE}
@@ -76,10 +66,10 @@ do
     mv ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config.properties ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
 
     #Duplicate the deploy engine yaml and modify arguments
-    cp ./engine/${ENGINE}/engine_${ENGINE}${WITHOUT_SAMBA}.yaml ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
-    sed -i "s|engine-${ENGINE}|engine-${ENGINE}-${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml    
+    cp ./engine/${ENGINE}/engine_${ENGINE}.yaml ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-${i}.yaml
+    sed -i "s|engine-${ENGINE}|engine-${ENGINE}-${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-${i}.yaml    
 
     #Deploy engine
-    kubectl create -f ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}${WITHOUT_SAMBA}-${i}.yaml
+    kubectl create -f ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-${i}.yaml
     echo
 done
