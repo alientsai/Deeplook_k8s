@@ -17,6 +17,23 @@ $ kubectl get configmap nginx-config -o yaml
 $ kubectl create -f nginx-deployment.yaml
 ```
 
+## Remove nginx
+
+```shell
+$ kubectl delete -f nginx-deployment.yaml
+```
+
+## Remove nginx configmap
+
+```shell
+$  kubectl delete configmap nginx-config
+```
+
+## Service Infomation
+|ServiceName|Type|container Port|Expose Port|
+|-|-|-|-|
+|nginx|ClusterIP|80|N/A|
+
 ## Watch Log
 
 ```shell

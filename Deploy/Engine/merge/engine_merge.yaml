@@ -1,35 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: engine-classify
+  name: engine-merge
   labels:
-    app: engine-classify
+    app: engine-merge
 spec:
   replicas: 1 
   selector:
     matchLabels:
-      app: engine-classify
+      app: engine-merge
   template:
     metadata:
      labels:
-       app: engine-classify
+       app: engine-merge
     spec:
       nodeSelector:
-        machine: gpu
-        gpu: 1080ti
+        machine: storage        
       containers:
-      - name: engine-classify
-        image: aquamars00/deeplook_engine_classify:1.2
+      - name: engine-merge
+        image: aquamars00/deeplook_engine_merge:1.2
         command: ["/bin/bash","-c"]
         args:
           - ln -s -f /root/tmp_config/config.properties /root/config.properties;
             /etc/init.d/atd start;
+            chmod 777 /root/Orchestrator-0.2.8.jar;
             cd /root;
-            echo 'java -jar /root/Orchestrator-0.2.7.jar &' | at now;
+            echo 'java -jar /root/Orchestrator-0.2.8.jar &' | at now;
             sleep 1234567;
-        resources:
-          limits:
-            nvidia.com/gpu: 1
         volumeMounts:
         - name: media-root
           mountPath: /var/www/html/
@@ -37,9 +34,9 @@ spec:
           mountPath: /root/tmp_config
         - name: varlog
           mountPath: /root/log
-      - name: engine-classify-agent
+      - name: engine-merge-agent
         image: busybox
-        args: [/bin/sh, -c, 'tail -n+1 -f /var/log/*.log']
+        args: [/bin/sh, -c, 'tail -n0 -F /var/log/*']
         volumeMounts:
         - name: varlog
           mountPath: /var/log
@@ -48,7 +45,7 @@ spec:
         emptyDir: {}
       - name: media-root
         persistentVolumeClaim:
-          claimName: pvc-media
+          claimName: pvc-nfs
       - name: config
         configMap:
-          name: engine-classify
+          name: engine-merge

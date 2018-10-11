@@ -19,7 +19,7 @@ spec:
         gpu: 1080ti
       containers:
       - name: engine-clustering
-        image: 140.96.29.86:31115/clustering:1.0
+        image: aquamars00/deeplook_engine_clustering:1.2
         env:
         - name: GLOG_minloglevel
           value: '3'
@@ -34,7 +34,7 @@ spec:
           limits:
             nvidia.com/gpu: 1
         volumeMounts:
-        - name: samba
+        - name: media-root
           mountPath: /var/www/html/
         - name: config
           mountPath: /root/tmp_config
@@ -42,22 +42,16 @@ spec:
           mountPath: /root/log
       - name: engine-clustering-agent
         image: busybox
-        args: [/bin/sh, -c, 'tail -n+1 -f /var/log/*.log']
+        args: [/bin/sh, -c, 'tail -n0 -F /var/log/*']
         volumeMounts:
         - name: varlog
           mountPath: /var/log
       volumes:
       - name: varlog
         emptyDir: {}
-      - name: samba
-        flexVolume:
-          driver: "fstab/cifs"
-          fsType: "cifs"
-          secretRef:
-            name: "cifs-secret"
-          options:
-            networkPath: "//140.96.29.33/snakeeyes"
-            mountOptions: "dir_mode=0755,file_mode=0644,noperm"
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-nfs
       - name: config
         configMap:
           name: engine-clustering

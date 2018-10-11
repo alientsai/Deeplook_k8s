@@ -31,7 +31,7 @@ Follow [`Kibana Setting`](./KibanaPatternSetting.md)
 ## Information
 
 |ServiceName|Type|container Port|Expose Port|namespace|
-|-|-|-|-|-|-|
+|-|-|-|-|-|
 |elasticsearch-logging|ClusterIP|9200|N/A|`kube-system`|
 |kibana-logging|ClusterIP|5601|N/A|`kube-system`|
 

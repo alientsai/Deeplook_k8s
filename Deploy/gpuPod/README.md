@@ -2,10 +2,10 @@
 # Deploy Engine
 
 ## Engine infomation
-|Engine|CNName|Image|size|
-|-|-|-|-|
-|engine-classify|classify|140.96.29.86:31115/classify:1.2|6.54G|
-|engine-clustering|clustering|140.96.29.86:31115/clustering:1.0|17.6G|
+|Engine|CNName|Image|
+|-|-|-|
+|engine-classify|classify|[aquamars00/deeplook_engine_classify:1.2](https://hub.docker.com/r/aquamars00/deeplook_engine_classify/)|
+|engine-clustering|clustering|[aquamars00/deeplook_engine_clustering:1.2](https://hub.docker.com/r/aquamars00/deeplook_engine_clustering/)|
 
 ## 1. Create ConfigMaps from files
 
@@ -40,12 +40,11 @@ $ ./deploy_engines.sh
 
 [![asciicast](https://asciinema.org/a/Z8qfeVL8XAaQpFA6BF685rrGD.png)](https://asciinema.org/a/Z8qfeVL8XAaQpFA6BF685rrGD)
 
-```shell
-$ kubectl create -f ./engine/classify/engine_classify.yaml
-$ kubectl create -f ./engine/clustering/engine_clustering.yaml
-```
-
 ## 3. Watch log
+
+According to different engine number need add number on `lapp` and `-c`.
+
+e.g.: `watch kubectl logs --tail=55 -lapp=engine-classify-0 -c engine-classify-0-agent`
 
 ```shell
 $ watch kubectl logs --tail=55 -lapp=engine-classify -c engine-classify-agent
@@ -57,7 +56,7 @@ Watch logs from **kibana**
 
 ## Service information
 |ServiceName|Type|container Port|Expose Port|Node label|
-|-|-|-|-|-|-|
+|-|-|-|-|-|
 |engine-classify|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
 |engine-clustering|ClusterIP|80|N/A|`gpu:1080ti`, `machine:gpu`|
 

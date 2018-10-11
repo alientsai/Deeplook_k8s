@@ -21,6 +21,8 @@
       - paas
   - [DockerRegistry](./Deploy/DockerRegistry/README.md)
       - UI
+  - [Engine](./Deploy/Engine/README.md)
+      - merge
   - [gpuPod](./Deploy/gpuPod/README.md)
       - engine
           - classify
@@ -35,6 +37,9 @@
       - acl
   - [Volume](./Deploy/Volume/README.md)
   - [EFK](./Deploy/EFK/README.md)
+  - [nginx](./Deploy/nginx/README.md)
+  - [Ingress](./Deploy/Ingress/README.md)
+  - [Samba](./Deploy/Samba/README.md)
 
 ## Deeplook Network
 ![alt text](/Images/Cluster_network.png "Deeplook Network")
@@ -42,21 +47,28 @@
 ## Plaform services
 |ServiceName|Type|container Port|Expose Port|Node label|namespaces|
 |-|-|-|-|-|-|
-|deeplook|NodePort|8080|32010|`machine:storage`|`default`|
-|paas|NodePort|8080|32011|`machine:storage`|`default`|
-|acl|clusterIP|8080|N/A|`machine:storage`|`default`|
-|map|NodePort|80|32009|`machine:storage`|`default`|
-|pgadmin4|NodePort|80|32008||`default`|
-|registry|NodePort|5000|31115|`machine:storage`|`default`|
-|registry-ui|NodePort|80|31116||`default`|
+|deeplook|ClusterIP|8080|N/A|`machine:storage`|`default`|
+|paas|ClusterIP|8080|N/A|`machine:storage`|`default`|
+|acl|ClusterIP|8080|N/A|`machine:storage`|`default`|
+|map|ClusterIP|80|N/A|`machine:storage`|`default`|
+|cityeyes-postgresql-expose|ClusterIP|5432|32006||`default`|
+|paas-postgresql-expose|ClusterIP|5432|32005||`default`|
+|acldb-expose|ClusterIP|3306|32004||`default`|
 |cityeyes-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |paas-postgresql|ClusterIP|5432|N/A|`machine:storage`|`default`|
 |acldb|ClusterIP|3306|N/A|`machine:storage`|`default`|
+|nginx|ClusterIP|80|N/A||`default`|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||`default`|
+|mq-rabbitmq-expose|NodePort|5672|32007||`default`|
+|nfs-server|ClusterIP(10.100.95.27)|2049, 20048, 111|N/A|`machine:storage`|`default`|
+|nfs-maven-server|ClusterIP(10.100.55.66)|2049, 20048, 111|N/A|`machine:storage`|`default`|
 |engine-classify|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
 |engine-clustering|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
 |elasticsearch-logging|ClusterIP|9200|N/A||`kube-system`|
 |kibana-logging|ClusterIP|5601|N/A||`kube-system`|
+|pgadmin4|NodePort|80|32008||`default`|
+|registry|NodePort|5000|31115|`machine:storage`|`default`|
+|registry-ui|NodePort|80|31116||`default`|
 
 ## Secret Information
 |Secret Name|DATA|Deploy for|
@@ -68,9 +80,10 @@
 ## Service URL
 |ServiceName|URL|
 |-|-|
-|deeplook_paas|http://140.96.29.86:32011/PaaS|
-|deeplook_cityeyes|http://140.96.29.86:32010/CityEyes|
-|OpenMap Tiles Map Server|http://140.96.29.86:32009|
+|deeplook_cityeyes|http://140.96.29.86|
+|deeplook_paas|http://140.96.29.86/PaaS/|
+|OpenMap Tiles Map Server|http://140.96.29.86/map/|
+|Rabbitmq manager|http://140.96.29.86/rabbitmq/|
 |pgAdmin4|http://140.96.29.86:32008|
 |Docker Registry UI|http://140.96.29.86:31116|
 |kibana|https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy/|
@@ -104,3 +117,14 @@
 
 ## Deeplook Infra
 ![alt text](/Images/Deeplook_infra2.png "Deeplook Infra")
+
+# Contribution
+
+* A40503
+* Kevin Huang
+* Yenhsuan
+
+# Change log
+
+* `1.0.0` : Available cross node share data. Add NFS, Ingress, samba, merge engine.
+* `0.9.0` : Available singe node.

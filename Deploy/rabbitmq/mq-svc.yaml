@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: rabbitmq
+    chart: rabbitmq-1.1.9
+    heritage: Tiller
+    release: mq
+  name: mq-rabbitmq-expose
+  namespace: default
+spec:
+  ports:
+    - name: amqp
+      nodePort: 31072
+      port: 5672
+      protocol: TCP
+      targetPort: amqp
+    - name: stats
+      nodePort: 31075
+      port: 15672
+      protocol: TCP
+      targetPort: stats
+  selector:
+    app: rabbitmq
+    release: mq
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

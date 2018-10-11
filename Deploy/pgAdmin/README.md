@@ -5,6 +5,12 @@
 ```shell
  $ kubectl create -f pgadmin-deployment.yaml
 ```
+## Remove pgadmin4
+
+```shell
+$ kubectl delete -f pgadmin-deployment.yaml
+```
+
 ### Default Setting
 
 |Parameter|Default|

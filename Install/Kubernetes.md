@@ -13,7 +13,7 @@ Install on `a4050302-un62`
 For download from https.
 ```shell
 $ apt-get update
-$ apt-get install -y apt-transport-https curl
+$ apt-get install -y apt-transport-https curl nfs-common nfs-kernel-server
 ```
 
 The [CIFS Flexvolume Plugin][0] requires (Can ignore if not use):

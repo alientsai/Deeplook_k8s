@@ -18,8 +18,8 @@ spec:
         machine: storage
       initContainers:
       - name: gitclone
-        image: alpine/git
-        command: ["sh","-c","rm -rf /git/* && git clone --single-branch -b develop https://2e990ac7f19037aca1b3672ee443f597a23e2995@github.com/ITRI-ICL-DivX/deeplook_cityeyes.git && sleep 2"]
+        image: alpine/git:latest
+        command: ["sh","-c","rm -rf /git/* && git clone --single-branch -b v1.1.0 https://2e990ac7f19037aca1b3672ee443f597a23e2995@github.com/ITRI-ICL-DivX/deeplook_cityeyes.git && sleep 2"]
         volumeMounts:
         - name: git-repo
           mountPath: /git
@@ -30,7 +30,7 @@ spec:
         args:
           - cd /usr/src/mymaven/deeplook_cityeyes;
             sed -i "s|\/hot||g" ./src/main/webapp/OpenLayers/GlobleVal.js;
-            sh /usr/src/mymaven/deeplook_cityeyes/settingScript --paas_url paas --db_url cityeyes-postgresql/postgres --samba 140.96.29.86:32000 --map_url 140.96.29.86:32009/styles/osm-bright --acl_url acl:8080;
+            sh /usr/src/mymaven/deeplook_cityeyes/settingScript --paas_url paas --db_url cityeyes-postgresql/postgres --samba 140.96.29.86/media/ --map_url 140.96.29.86/map/styles/osm-bright --acl_url acl:8080;
             mvn clean package -nsu -Dmaven.test.skip=true;
             cp /usr/src/mymaven/deeplook_cityeyes/target/CityEyes.war /target;
             while :; do sleep 2073600; done;
@@ -62,10 +62,10 @@ spec:
         emptyDir: {}
       - name: maven-repo
         persistentVolumeClaim:
-          claimName: pvc-maven
+          claimName:  pvc-nfs-maven
       - name: media-root
         persistentVolumeClaim:
-          claimName: pvc-media
+          claimName: pvc-nfs
 ---
 apiVersion: v1
 kind: Service
@@ -74,9 +74,8 @@ metadata:
   labels:
     app: deeplook
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
-    nodePort: 32010
   selector:
     app: deeplook

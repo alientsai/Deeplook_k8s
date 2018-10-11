@@ -18,7 +18,7 @@ spec:
         machine: storage
       initContainers:
       - name: gitclone
-        image: alpine/git
+        image: alpine/git:latest
         command: ["sh","-c","rm -rf /git/* && git clone --single-branch -b develop https://2e990ac7f19037aca1b3672ee443f597a23e2995@github.com/ITRI-ICL-DivX/deeplook_paas.git && sleep 2"]
         volumeMounts:
         - name: git-repo
@@ -74,9 +74,8 @@ metadata:
   labels:
     app: paas
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
-    nodePort: 32011
   selector:
     app: paas
