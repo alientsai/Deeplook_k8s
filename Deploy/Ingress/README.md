@@ -21,8 +21,8 @@ $ kubectl create -f ./
 
 |ServiceName|Expose url|
 |-|-|
-|deeplook|140.96.29.86|
-|paas|140.96.29.86/`PaaS`/|
-|media|140.96.29.86/`media`/|
-|map|140.96.29.86/`map`/|
-|rabbitmq|140.96.29.86/`rabbitmq`/|
+|deeplook|${Master IP}|
+|paas|${Master IP}/`PaaS`/|
+|media|${Master IP}/`media`/|
+|map|${Master IP}/`map`/|
+|rabbitmq|${Master IP}/`rabbitmq`/|

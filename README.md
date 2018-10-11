@@ -80,14 +80,14 @@
 ## Service URL
 |ServiceName|URL|
 |-|-|
-|deeplook_cityeyes|http://140.96.29.86|
-|deeplook_paas|http://140.96.29.86/PaaS/|
-|OpenMap Tiles Map Server|http://140.96.29.86/map/|
-|Rabbitmq manager|http://140.96.29.86/rabbitmq/|
-|pgAdmin4|http://140.96.29.86:32008|
-|Docker Registry UI|http://140.96.29.86:31116|
-|kibana|https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy/|
-|kubernetes-dashboard|https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/|
+|deeplook_cityeyes|http://${Master IP}|
+|deeplook_paas|http://${Master IP}/PaaS/|
+|OpenMap Tiles Map Server|http://${Master IP}/map/|
+|Rabbitmq manager|http://${Master IP}/rabbitmq/|
+|pgAdmin4|http://${Master IP}:32008|
+|Docker Registry UI|http://${Master IP}:31116|
+|kibana|https://${Master IP}:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy/|
+|kubernetes-dashboard|https://${Master IP}:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/|
 
 
 ## Volume Information

@@ -52,7 +52,7 @@ $ watch kubectl logs --tail=55 -lapp=engine-clustering -c engine-clustering-agen
 ```
 
 Watch logs from **kibana**
-`https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy` on browser.
+`https://${Master IP}:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy` on browser.
 
 ## Service information
 |ServiceName|Type|container Port|Expose Port|Node label|
