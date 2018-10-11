@@ -8,7 +8,19 @@ Idea: Make a image have initial data. Use kubernetes job to copy data to pvc.
 $ kubectl create -f ./
 ```
 
-When job status `completed` then delete job.
+Check job
+
+```sh
+$ kubectl get job
+```
+
+Check job's pod status
+
+```sh
+$ kubectl get po
+```
+
+When job's pod status `completed` then delete job.
 
 ```sh
 $ kubectl delete -f ./
