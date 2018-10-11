@@ -59,7 +59,7 @@
 |acldb|ClusterIP|3306|N/A|`machine:storage`|`default`|
 |nginx|ClusterIP|80|N/A||`default`|
 |mq-rabbitmq|ClusterIP|4369,5672,25672,15672|N/A||`default`|
-|mq-rabbitmq-expose|NodePort|5672|32007||`default`|
+|mq-rabbitmq-expose|NodePort|5672,15672|31072,31075||`default`|
 |nfs-server|ClusterIP(10.100.95.27)|2049, 20048, 111|N/A|`machine:storage`|`default`|
 |nfs-maven-server|ClusterIP(10.100.55.66)|2049, 20048, 111|N/A|`machine:storage`|`default`|
 |engine-classify|N/A|N/A|N/A|`gpu:1080ti`, `machine:gpu`|`default`|
@@ -80,14 +80,14 @@
 ## Service URL
 |ServiceName|URL|
 |-|-|
-|deeplook_cityeyes|http://140.96.29.86|
-|deeplook_paas|http://140.96.29.86/PaaS/|
-|OpenMap Tiles Map Server|http://140.96.29.86/map/|
-|Rabbitmq manager|http://140.96.29.86/rabbitmq/|
-|pgAdmin4|http://140.96.29.86:32008|
-|Docker Registry UI|http://140.96.29.86:31116|
-|kibana|https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy/|
-|kubernetes-dashboard|https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/|
+|deeplook_cityeyes|http://${Master IP}|
+|deeplook_paas|http://${Master IP}/PaaS/|
+|OpenMap Tiles Map Server|http://${Master IP}/map/|
+|Rabbitmq manager|http://${Master IP}/rabbitmq/|
+|pgAdmin4|http://${Master IP}:32008|
+|Docker Registry UI|http://${Master IP}:31116|
+|kibana|https://${Master IP}:6443/api/v1/namespaces/kube-system/services/kibana-logging/proxy/|
+|kubernetes-dashboard|https://${Master IP}:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/|
 
 
 ## Volume Information

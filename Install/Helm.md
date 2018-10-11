@@ -22,6 +22,9 @@ $ helm help
 
 ## Install Tiller
 
+> When you reset k8s(kubeadm reset). \
+> You need do this step again.
+
 ### RBAC install
 You can follow this [tiller-and-role-based-access-control][4]
 ```shell

@@ -1,10 +1,10 @@
 # Install Kubernetes using kubeadm
 
 ## Node information
-|Hostername|OS|IP|
-| - | - | - |
-|a4050302-un62|Ubuntu 16.04|140.96.29.86|
-|990293dnn|Ubuntu 16.04|140.96.29.171|
+|Hostername|OS|IP|GPU|
+| - | - | - | - |
+|a4050302-un62|Ubuntu 16.04|140.96.29.86|0|
+|990293dnn|Ubuntu 16.04|140.96.29.171|1|
 
 ## Install Master
 Install on `a4050302-un62`
@@ -51,7 +51,7 @@ $ sudo swapoff -a
 
 Initial from kubeadm
 ```shell
-$ kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=140.96.29.86
+$ kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${Master IP}
 ```
 
 ### 4. Config kubectl
@@ -104,7 +104,7 @@ $ kubeadm token create --print-join-command
 **On `minion node`:**
 
 ```shell
-$ kubeadm join 140.96.29.86:6443 --token fzuf2f.ihdf67ai1rg2y578 --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4
+$ kubeadm join ${Master IP}:6443 --token fzuf2f.ihdf67ai1rg2y578 --discovery-token-ca-cert-hash sha256:044da37f2afe22ce8ca78a99d2f841d8e3c2599b4660508053ff66fa5720f8b4
 ```
 
 ### 7. Setting labels
@@ -114,14 +114,14 @@ $ kubeadm join 140.96.29.86:6443 --token fzuf2f.ihdf67ai1rg2y578 --discovery-tok
 #### Gpu node label
 
 ```shell
-$ kubectl label node 990293dnn gpu=1080ti
-$ kubectl label node 990293dnn machine=gpu
+$ kubectl label node ${GPU Node Name} gpu=1080ti
+$ kubectl label node ${GPU Node Name} machine=gpu
 ```
 
 #### Storage node label
 
 ```shell
-$ kubectl label node 990293dnn machine=storage
+$ kubectl label node ${Master Name} machine=storage
 ```
 
 #### Check labels
