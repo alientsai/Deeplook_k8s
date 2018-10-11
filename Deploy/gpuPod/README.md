@@ -7,7 +7,7 @@
 |engine-classify|classify|[aquamars00/deeplook_engine_classify:1.2](https://hub.docker.com/r/aquamars00/deeplook_engine_classify/)|
 |engine-clustering|clustering|[aquamars00/deeplook_engine_clustering:1.2](https://hub.docker.com/r/aquamars00/deeplook_engine_clustering/)|
 
-## 1. Create ConfigMaps from files
+<!-- ## 1. Create ConfigMaps from files
 
 ```shell
 $ kubectl create configmap engine-classify --from-file=./engine/classify/config.properties
@@ -19,9 +19,9 @@ $ kubectl create configmap engine-clustering --from-file=./engine/clustering/con
 ```shell
 $ kubectl get configmap engine-classify
 $ kubectl get configmap engine-classify -o yaml
-```
+``` -->
 
-## 2. Deploy engine
+## Deploy engine from script
 
 Execute script `deploy_engines.sh` for deploying multi engines.
 
@@ -40,7 +40,7 @@ $ ./deploy_engines.sh
 
 [![asciicast](https://asciinema.org/a/Z8qfeVL8XAaQpFA6BF685rrGD.png)](https://asciinema.org/a/Z8qfeVL8XAaQpFA6BF685rrGD)
 
-## 3. Watch log
+## Watch log
 
 According to different engine number need add number on `lapp` and `-c`.
 
