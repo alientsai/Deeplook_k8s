@@ -41,6 +41,20 @@ Should be like this:
 $ kubectl create -f ./
 ```
 
+## Remove Ingress service
+
+```shell
+$ kubectl delete ./
+```
+
+## Remove Ingress controller
+
+Use `helm` remove ingress controller.
+
+```shell
+$ helm delete --purge ing
+```
+
 ## Expose service
 
 **Don't forget ' `/` ' !**
