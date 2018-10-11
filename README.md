@@ -117,3 +117,14 @@
 
 ## Deeplook Infra
 ![alt text](/Images/Deeplook_infra2.png "Deeplook Infra")
+
+# Contribution
+
+* A40503
+* Kevin Huang
+* Yenhsuan
+
+# Change log
+
+* `1.0.0` : Available cross node share data. Add NFS, Ingress, samba, merge engine.
+* `0.9.0` : Available singe node.
