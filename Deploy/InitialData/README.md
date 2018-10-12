@@ -28,7 +28,7 @@ $ kubectl delete -f ./
 ## Image infomation
 |Image|
 |-|
-|[aquamars00/deeplook_init_data:1.0](https://hub.docker.com/r/aquamars00/deeplook_init_data/)|
+|[aquamars00/deeplook_init_data:1.1](https://hub.docker.com/r/aquamars00/deeplook_init_data/)|
 
 ## Idea
 ![alt text](/Images/Initial_datas.png "Initial Datas")
