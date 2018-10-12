@@ -1,32 +1,32 @@
 # Deploy Steps
 
-## 1. Volume & Sercet
+## 1. Ingress
+
+- See [Ingress](./Ingress/README.md)
+
+## 2. Volume & Sercet
 - See [Volume](./Volume/README.md)
 - See [Secret](./Secret/README.md)
 
-## 2. Initial Data
+## 3. Initial Data
 
 - See [Initial Data](./InitialData/README.md)
 
-## 3. Database
+## 4. Database
 - See [Database](./Database/README.md) \
 Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 
-## 4. NFS
+## 5. NFS
 
 - See [NFS](./NFS/README.md)
 
-## 5. Rabbitmq, Map and nginx
+## 6. Rabbitmq, Map and nginx
 - See [Rabbitmq](./rabbitmq/README.md)
   (Don't forget create queues: [create queues](./rabbitmq/README.md#using-script-create-queues))
 
 - See [MapTileServer](./MapTileServer/README.md)
 
 - See [nginx](./nginx/README.md) (Need create configmap before deploy)
-
-## 6. Ingress
-
-- See [Ingress](./Ingress/README.md)
 
 ## 7. Tomcat
 

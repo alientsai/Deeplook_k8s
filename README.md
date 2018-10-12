@@ -36,6 +36,7 @@
       - paas
       - acl
   - [Volume](./Deploy/Volume/README.md)
+  - [InitialData](./Deploy/InitialData/README.md)
   - [EFK](./Deploy/EFK/README.md)
   - [nginx](./Deploy/nginx/README.md)
   - [Ingress](./Deploy/Ingress/README.md)

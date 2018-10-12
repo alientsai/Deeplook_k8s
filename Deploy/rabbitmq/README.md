@@ -17,7 +17,7 @@ $ kubectl create -f mq-svc.yaml
 ## Using script Create queues
 
 ```shell
-$ sh ./setQueues.sh
+$ chmod 755 ./setQueues.sh && ./setQueues.sh
 ```
 
 The script will created quenes :
