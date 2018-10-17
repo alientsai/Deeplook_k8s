@@ -27,14 +27,14 @@
       - engine
           - classify
           - clustering
-  - [MapTileServer](./Deploy/MapTileServer/README.md)
-  - [pgAdmin](./Deploy/pgAdmin/README.md)
-  - [Rabbitmq](./Deploy/rabbitmq/README.md)
-  - [Secret](./Deploy/Secret/README.md)
   - [Tomcat](./Deploy/Tomcat/README.md)
       - deeplook
       - paas
       - acl
+  - [MapTileServer](./Deploy/MapTileServer/README.md)
+  - [pgAdmin](./Deploy/pgAdmin/README.md)
+  - [Rabbitmq](./Deploy/rabbitmq/README.md)
+  - [Secret](./Deploy/Secret/README.md)
   - [Volume](./Deploy/Volume/README.md)
   - [InitialData](./Deploy/InitialData/README.md)
   - [EFK](./Deploy/EFK/README.md)
