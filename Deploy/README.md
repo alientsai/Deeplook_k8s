@@ -4,9 +4,13 @@
 
 - See [Ingress](./Ingress/README.md)
 
-## 2. Volume & Sercet
+> Video: [Deploy Ingress](https://drive.google.com/open?id=1piVyRAlkLACsL0JH324VPJUX8DhZFTyC)
+
+## 2. Volume & Secret
 - See [Volume](./Volume/README.md)
 - See [Secret](./Secret/README.md)
+
+> Video: [Deploy Volume, secret, initailData and Database](https://drive.google.com/open?id=1DEUaQSSg97j-DDB4uH-yZsRuTCW7wDvI)
 
 ## 3. Initial Data
 
@@ -19,6 +23,8 @@ Inculdes `cityeyes-postgresql`, `paas-postgresql`, `acl-mysql`
 ## 5. NFS
 
 - See [NFS](./NFS/README.md)
+
+> Video: [Deploy nfs, rabbitmq, map and nginx](https://drive.google.com/open?id=1SogJR_q4K-pLYrOch6bgKm93KZfCq5_E)
 
 ## 6. Rabbitmq, Map and nginx
 - See [Rabbitmq](./rabbitmq/README.md)
@@ -40,6 +46,8 @@ Order:
   - [deeplook](./Tomcat/README.md#deploy-deeplook)
 > Deeplook NEED change IP in `yaml` 
 
+> Video: [Deploy acl, paas and deeplook](https://drive.google.com/open?id=1V3xHirZ0oGVT95kj1p-Cntiq4KMfN-We)
+
 ## 8. Merge Engine
 
 - See [Engine](./Engine/README.md)
@@ -47,6 +55,10 @@ Order:
 ## 9. GPU Engine (When `GPU` node available)
 
 - See [gpuPod](./gpuPod/README.md)
+
+> Video: \
+> [Deploy engine classify and clustering #1](https://drive.google.com/open?id=1ReD3ZVPxi-xRgiGX8hfprj7YSeAOWF8B) \
+> [Deploy engine classify and clustering #2](https://drive.google.com/open?id=1G5-AWaDXgzDHKJ_AHpGtldZCBsG4lApB)
 
 ## 10. Samba (If use windows engine)
 
