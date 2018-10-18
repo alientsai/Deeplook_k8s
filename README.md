@@ -27,14 +27,14 @@
       - engine
           - classify
           - clustering
-  - [MapTileServer](./Deploy/MapTileServer/README.md)
-  - [pgAdmin](./Deploy/pgAdmin/README.md)
-  - [Rabbitmq](./Deploy/rabbitmq/README.md)
-  - [Secret](./Deploy/Secret/README.md)
   - [Tomcat](./Deploy/Tomcat/README.md)
       - deeplook
       - paas
       - acl
+  - [MapTileServer](./Deploy/MapTileServer/README.md)
+  - [pgAdmin](./Deploy/pgAdmin/README.md)
+  - [Rabbitmq](./Deploy/rabbitmq/README.md)
+  - [Secret](./Deploy/Secret/README.md)
   - [Volume](./Deploy/Volume/README.md)
   - [InitialData](./Deploy/InitialData/README.md)
   - [EFK](./Deploy/EFK/README.md)
@@ -127,5 +127,6 @@
 
 # Change log
 
+* `1.1.0` : Add install & deploy videos. Fix Ingress deploy failed.
 * `1.0.0` : Available cross node share data. Add NFS, Ingress, samba, merge engine.
 * `0.9.0` : Available singe node.

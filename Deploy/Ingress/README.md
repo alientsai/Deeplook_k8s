@@ -5,7 +5,7 @@
 Use `helm` install ingress controller.
 
 ```shell
-$ helm install stable/nginx-ingress --name ing --set controller.hostNetwork=true --version=0.23.0
+$ helm install stable/nginx-ingress --name ing -f values.yaml --version=0.23.0
 ```
 The detail can see [kube apphub stable/nginx-ingress](https://hub.kubeapps.com/charts/stable/nginx-ingress)
 
@@ -44,7 +44,7 @@ $ kubectl create -f ./
 ## Remove Ingress service
 
 ```shell
-$ kubectl delete ./
+$ kubectl delete -f ./
 ```
 
 ## Remove Ingress controller

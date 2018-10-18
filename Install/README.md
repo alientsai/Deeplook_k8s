@@ -2,6 +2,24 @@
 
 **Ubuntu 16.04 is working on this guide**
 
+## Before Install - Check your dns
+
+**On `/etc/resolv.conf` check your dns.**
+
+### Change dns
+
+Open `/etc/network/interfaces` and add `dns-nameservers 8.8.8.8 8.8.8.4`.
+
+```shell
+$ vim /etc/network/interfaces
+# Add follows :
+# dns-nameservers 8.8.8.8
+# dns-nameservers 8.8.8.4
+$ reboot
+```
+
+
+
 ## 1. Docker
 
 Install Docker from Ubuntu’s repositories:
@@ -59,12 +77,16 @@ The more detail can referrer [nvidia-docker][nvidia-docker#quickstart] and [Dock
 ## 3. Kubernetes
 See [Kubernetes.md](./Kubernetes.md)
 
+> Video: [Install k8s with gpu](https://drive.google.com/open?id=1e-UygnAXL0NJzqmf7xzY5i7GHfQDm5AW)
+
 ## 4. GPU for Kubernetes
 See [GPUforKubernetes.md](./GPUforKubernetes.md)
 
 ## 5. Helm (Master)
 > Use RBAC install
 See [Helm.md](./Helm.md) 
+
+> Video: [Install helm](https://drive.google.com/open?id=18Ka-U_y0yosOErhYEY0I-Y6TvADBKc1a)
 
 ## Troubleshooting
 See [Troubleshooting](./Troubleshooting.md)
