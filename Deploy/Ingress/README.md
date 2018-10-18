@@ -5,7 +5,7 @@
 Use `helm` install ingress controller.
 
 ```shell
-$ helm install stable/nginx-ingress --name ing --set controller.hostNetwork=true --set controller.nodeSelector="role=master" --version=0.23.0
+$ helm install stable/nginx-ingress --name ing -f values.yaml --version=0.23.0
 ```
 The detail can see [kube apphub stable/nginx-ingress](https://hub.kubeapps.com/charts/stable/nginx-ingress)
 
