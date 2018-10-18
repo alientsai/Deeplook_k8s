@@ -124,6 +124,12 @@ $ kubectl label node ${GPU Node Name} machine=gpu
 $ kubectl label node ${Master Name} machine=storage
 ```
 
+#### Role node label
+
+```shell
+$ kubectl label node ${Master Name} role=master
+```
+
 #### Check labels
 
 ```shell
