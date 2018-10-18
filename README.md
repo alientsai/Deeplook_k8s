@@ -127,5 +127,6 @@
 
 # Change log
 
+* `1.1.0` : Add install & deploy videos. Fix Ingress deploy failed.
 * `1.0.0` : Available cross node share data. Add NFS, Ingress, samba, merge engine.
 * `0.9.0` : Available singe node.
