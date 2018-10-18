@@ -2,6 +2,24 @@
 
 **Ubuntu 16.04 is working on this guide**
 
+## Before Install - Check your dns
+
+**On `/etc/resolv.conf` check your dns.**
+
+### Change dns
+
+Open `/etc/network/interfaces` and add `dns-nameservers 8.8.8.8 8.8.8.4`.
+
+```shell
+$ vim /etc/network/interfaces
+# Add follows :
+# dns-nameservers 8.8.8.8
+# dns-nameservers 8.8.8.4
+$ reboot
+```
+
+
+
 ## 1. Docker
 
 Install Docker from Ubuntu’s repositories:
