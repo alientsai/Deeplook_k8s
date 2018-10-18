@@ -44,7 +44,7 @@ $ kubectl create -f ./
 ## Remove Ingress service
 
 ```shell
-$ kubectl delete ./
+$ kubectl delete -f ./
 ```
 
 ## Remove Ingress controller
