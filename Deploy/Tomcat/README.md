@@ -26,7 +26,7 @@ $ kubectl get configmap acl-config -o yaml
 $ kubectl create -f ./acl/acl.yaml
 ```
 
-## Deploy Tomcat for PaaS & deeplook
+## Deploy Tomcat for paas & deeplook
 
 ### Deploy paas (from image)
 ```shell
@@ -75,9 +75,9 @@ $ kubectl create -f ./deeplook/deeplook-deploy-from-code.noSamba.yaml
 ## Image Information
 |PodName|Container Image|
 |-|-|
-|deeplook|tomcat:8-jre8|
-|paas|aquamars00/deeplook_paas:1.0|
-|acl|aquamars00/deeplook_acl:1.0|
+|deeplook|[tomcat:8-jre8](https://hub.docker.com/_/tomcat/)|
+|paas|[aquamars00/deeplook_paas:1.0](https://hub.docker.com/r/aquamars00/deeplook_paas/)|
+|acl|[aquamars00/deeplook_acl:1.0](https://hub.docker.com/r/aquamars00/deeplook_acl/)|
 
 ### Tomcat for deeplook
 ```shell
