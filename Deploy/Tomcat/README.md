@@ -26,26 +26,20 @@ $ kubectl get configmap acl-config -o yaml
 $ kubectl create -f ./acl/acl.yaml
 ```
 
-**There are two kind of deploy.**
+## Deploy Tomcat for PaaS & deeplook
 
-## 1: Deploy from git-repository (Highly RECOMMEND)
-
-### Deploy paas
+### Deploy paas (from image)
 ```shell
-$ kubectl create -f ./paas/paas-deploy-from-code.noSamba.yaml
+$ kubectl create -f ./paas/paas.yaml
 ```
 
-> Paas build logs
->```shell
->$ watch kubectl logs --tail=55 -lapp=paas -c build-war
->```
 > Paas tomcat logs
 >```shell
->$ watch kubectl logs --tail=55 -lapp=paas -c paas
+>$ watch kubectl logs --tail=55 -lapp=paas
 >```
 
 
-### Deploy deeplook
+### Deploy deeplook (from code)
 
 > Need change the `IP` in `yaml` !
 
@@ -73,18 +67,6 @@ $ kubectl create -f ./deeplook/deeplook-deploy-from-code.noSamba.yaml
 
 ![alt text](/Images/Deploy_from_code.png "Deploy From Code")
 
-## 2: Deploy from file(.war)
-
-### Tomcat for paas
-```shell
-$ kubectl create -f paas.yaml
-```
-
->Paas logs
->```shell
->$ watch kubectl logs --tail=55 -lapp=paas 
->```
-
 ### Paas Pod Information
 |Container Path|Volume|
 |-|-|
@@ -94,7 +76,7 @@ $ kubectl create -f paas.yaml
 |PodName|Container Image|
 |-|-|
 |deeplook|tomcat:8-jre8|
-|paas|tomcat:7-jre8-alpine|
+|paas|aquamars00/deeplook_paas:1.0|
 |acl|aquamars00/deeplook_acl:1.0|
 
 ### Tomcat for deeplook
