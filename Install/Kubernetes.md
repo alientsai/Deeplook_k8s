@@ -121,13 +121,13 @@ $ kubectl label node ${GPU Node Name} machine=gpu
 #### Storage node label
 
 ```shell
-$ kubectl label node ${Master Name} machine=storage
+$ kubectl label node $(hostname | sed 's/\([A-Z]\)/\L\1/g') machine=storage
 ```
 
 #### Role node label
 
 ```shell
-$ kubectl label node ${Master Name} role=master
+$ kubectl label node $(hostname | sed 's/\([A-Z]\)/\L\1/g') role=master
 ```
 
 #### Check labels
