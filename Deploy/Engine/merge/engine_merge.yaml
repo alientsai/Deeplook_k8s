@@ -35,7 +35,7 @@ spec:
         - name: varlog
           mountPath: /root/log
       - name: engine-merge-agent
-        image: busybox
+        image: busybox:1.29.3
         args: [/bin/sh, -c, 'tail -n0 -F /var/log/*']
         volumeMounts:
         - name: varlog
