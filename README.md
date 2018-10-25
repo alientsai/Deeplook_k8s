@@ -127,6 +127,7 @@
 
 # Change log
 
+* `1.2.0` : Add helm charts. Change to helm install from local chart. CNI and gpu-pulgin deploy from local file. PaaS deploy use [aquamars00/deeplook_paas](https://hub.docker.com/r/aquamars00/deeplook_paas/) image.
 * `1.1.0` : Add install & deploy videos. Fix Ingress deploy failed.
 * `1.0.0` : Available cross node share data. Add NFS, Ingress, samba, merge engine.
 * `0.9.0` : Available singe node.
