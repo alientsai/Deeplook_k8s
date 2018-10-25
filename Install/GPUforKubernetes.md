@@ -38,8 +38,10 @@ Once you have enabled this option on *all* the GPU nodes you wish to use,
 you can then enable GPU support in your cluster by deploying the following Daemonset:
 
 ```shell
-$ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v1.11/nvidia-device-plugin.yml
+$ kubectl create -f ./nvidia-device-plugin/nvidia-device-plugin.yml
 ```
+
+`nvidia-device-plugin.yml` from [nvidia-device-plugin](https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/v1.11/nvidia-device-plugin.yml)
 
 ## 4. Check gpu on node
 

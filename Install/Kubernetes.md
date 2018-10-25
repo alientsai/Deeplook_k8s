@@ -69,9 +69,13 @@ $ export KUBECONFIG=$HOME/.kube/config
 ### 6. Install CNI
 
 ```shell
-$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
+$ kubectl apply -f ./flannel/kube-flannel.yml
+$ kubectl apply -f ./flannel/kube-flannel-rbac.yml
 ```
+`kube-flannel.yaml` from [kube-flannel](https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml)
+`kube-flannel-rbac.yaml` from [kube-flannel-rbac](https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml)
+
+
 You can use another cni like `Calico`, `canal`, `weave` or something else you wanted.
 
 ## Install Minion (Worker)
