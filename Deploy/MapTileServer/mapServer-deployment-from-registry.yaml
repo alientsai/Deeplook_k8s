@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: map
+  labels:
+    app: map
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: map
+  template:
+    metadata:
+     labels:
+       app: map
+    spec:
+      nodeSelector:
+        machine: storage
+      containers:
+      - name: map
+        image: 140.96.29.86:31115/klokantech/openmaptiles-server:1.8
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: map-data
+          mountPath: /data
+      volumes:
+      - name: map-data
+        persistentVolumeClaim:
+          claimName: pvc-map
+#        flexVolume:
+#          driver: "fstab/cifs"
+#          fsType: "cifs"
+#          secretRef:
+#            name: "cifs-secret"
+#          options:
+#            networkPath: "//140.96.29.33/snakeeyes/mapData"
+#            mountOptions: "dir_mode=0755,file_mode=0644,noperm"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: map
+  labels:
+    app: map
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80    
+  selector:
+    app: map
