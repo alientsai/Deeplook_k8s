@@ -18,7 +18,11 @@ $ vim /etc/network/interfaces
 $ reboot
 ```
 
+## 0. Clone this project
 
+```shell
+$ git clone https://gitlab.com/Aquamars/Deeplook_k8s
+```
 
 ## 1. Docker
 

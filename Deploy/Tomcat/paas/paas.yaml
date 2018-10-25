@@ -18,25 +18,9 @@ spec:
         machine: storage
       containers:
       - name: paas
-        image: tomcat:7-jre8-alpine
-        env:
-        - name: CATALINA_OPTS
-          value: "-Duser.timezone=Asia/Taipei"
-        volumeMounts:
-        - name: samba-webapps
-          mountPath: /usr/local/tomcat/webapps
+        image: aquamars00/deeplook_paas:1.0
         ports:
         - containerPort: 8080
-      volumes:
-      - name: samba-webapps
-        flexVolume:
-          driver: "fstab/cifs"
-          fsType: "cifs"
-          secretRef:
-            name: "cifs-secret"
-          options:
-            networkPath: "//140.96.29.33/snakeeyes/webapps/paas"
-            mountOptions: "dir_mode=0755,file_mode=0644,noperm"
 ---
 apiVersion: v1
 kind: Service
@@ -45,9 +29,8 @@ metadata:
   labels:
     app: paas
 spec:
-  type: NodePort
+  type: ClusterIP
   ports:
   - port: 8080
-    nodePort: 32011
   selector:
     app: paas

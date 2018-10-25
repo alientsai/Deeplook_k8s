@@ -9,7 +9,7 @@ $ kubectl create -f ./acl/acl-database-deploy.yaml
 ## Cityeyes database
 Use `Helm` install.
 ```shell
-$ helm install --name cityeyes -f cityeyes/values.yaml stable/postgresql
+$ helm install --name cityeyes -f cityeyes/values.yaml ../Helm-Charts/postgresql-0.18.0/
 ```
 
  The detail can see [kube apphub stable/postgresql](https://hub.kubeapps.com/charts/stable/postgresql)
@@ -17,7 +17,7 @@ $ helm install --name cityeyes -f cityeyes/values.yaml stable/postgresql
 ## PaaS database
 Use `Helm` install.
 ```shell
-$ helm install --name paas -f paas/values.yaml stable/postgresql
+$ helm install --name paas -f paas/values.yaml ../Helm-Charts/postgresql-0.18.0/
 ```
 
  The detail can see [kube apphub stable/postgresql](https://hub.kubeapps.com/charts/stable/postgresql)
