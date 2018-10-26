@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: acl
+  labels:
+    app: acl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acl
+  template:
+    metadata:
+      labels:
+        app: acl
+    spec:
+      nodeSelector:
+        machine: storage
+      containers:
+      - name: acl
+        image: 140.96.29.86:31115/aquamars00/deeplook_acl:1.0
+        command: ["sh","-c"]
+        args:
+          - cp /root/tmp_config/proxool.xml /usr/share/apache-tomcat-8.5.23/bin/proxool.xml;
+            cd usr/share/apache-tomcat-8.5.23/bin/ && sh catalina.sh start;
+            sleep 1234567;
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config
+          mountPath: /root/tmp_config
+      volumes:
+      - name: config
+        configMap:
+          name: acl-config 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: acl
+  labels:
+    app: acl
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+  selector:
+    app: acl
