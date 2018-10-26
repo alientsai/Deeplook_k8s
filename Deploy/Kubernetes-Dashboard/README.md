@@ -4,8 +4,7 @@ The deploy inculde `heapster`, `grafana` and `influxdb`.
 The yaml files from [kubernetes/heapster][heapster].
 
 ```shell
-$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-$ kubectl create -f ./
+$ kubectl create -f admin-user.yaml,kubernetes-dashboard.yaml,grafana.yaml,heapster.yaml,influxdb.yaml
 ```
 
 ## Get token for Dashboard

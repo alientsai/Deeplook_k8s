@@ -38,13 +38,13 @@ Should be like this:
 ## Deploy Ingress service (After Ingrss controller is working)
 
 ```shell
-$ kubectl create -f ./
+$ kubectl create -f deeplook-ingress.yaml,ingress.yaml,paas-ingress.yaml
 ```
 
 ## Remove Ingress service
 
 ```shell
-$ kubectl delete -f ./
+$ kubectl delete -f deeplook-ingress.yaml,ingress.yaml,paas-ingress.yaml
 ```
 
 ## Remove Ingress controller
