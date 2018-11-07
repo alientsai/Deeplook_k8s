@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deeplook
+  labels:
+    app: deeplook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deeplook
+  template:
+    metadata:
+     labels:
+       app: deeplook
+    spec:
+      nodeSelector:
+        machine: storage
+      containers:
+      - name: cityeyes
+        image: 140.96.29.86:31115/tomcat:8-jre8
+        env:
+        - name: CATALINA_OPTS
+          value: "-Duser.timezone=Asia/Taipei"
+        volumeMounts:
+        - name: war-repo
+          mountPath: /var/www/html/
+        ports:
+        - containerPort: 8080
+      volumes:
+      - name: war-repo
+        persistentVolumeClaim:
+          claimName:  pvc-war-maven
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deeplook
+  labels:
+    app: deeplook
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+  selector:
+    app: deeplook
