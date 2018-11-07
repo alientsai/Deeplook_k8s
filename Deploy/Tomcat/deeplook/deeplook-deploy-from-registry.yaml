@@ -24,13 +24,13 @@ spec:
           value: "-Duser.timezone=Asia/Taipei"
         volumeMounts:
         - name: war-repo
-          mountPath: /var/www/html/
+          mountPath: /usr/local/tomcat/webapps
         ports:
         - containerPort: 8080
       volumes:
       - name: war-repo
         persistentVolumeClaim:
-          claimName:  pvc-war-maven
+          claimName:  pvc-nfs-war
 ---
 apiVersion: v1
 kind: Service
