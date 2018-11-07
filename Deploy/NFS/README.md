@@ -14,6 +14,12 @@ $ apt-get install -y nfs-common nfs-kernel-server
 $ kubectl create -f nfs-deployment.yaml,nfs-maven-deployment.yaml
 ```
 
+## Deloy NFS from registry
+
+```
+$ kubectl create -f nfs-deployment-from-registry.yaml,nfs-war-deployment-from-registry.yaml
+```
+
 ## Service Infomation
 |ServiceName|Type|container Port|Expose Port|
 |-|-|-|-|

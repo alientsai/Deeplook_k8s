@@ -17,6 +17,12 @@ $ kubectl get configmap nginx-config -o yaml
 $ kubectl create -f nginx-deployment.yaml
 ```
 
+## Deloy nginx from registry
+
+```shell
+$ kubectl create -f nginx-deployment-from-registry.yaml
+```
+
 ## Remove nginx
 
 ```shell
