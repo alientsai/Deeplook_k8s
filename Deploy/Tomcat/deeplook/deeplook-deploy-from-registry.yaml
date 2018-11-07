@@ -25,12 +25,17 @@ spec:
         volumeMounts:
         - name: war-repo
           mountPath: /usr/local/tomcat/webapps
+        - name: media-root
+          mountPath: /var/www/html/
         ports:
         - containerPort: 8080
       volumes:
       - name: war-repo
         persistentVolumeClaim:
           claimName:  pvc-nfs-war
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-nfs
 ---
 apiVersion: v1
 kind: Service
