@@ -1,4 +1,8 @@
 #!/bin/bash
+# For creating rabbitmq queues
+# Array 'queues' can be customized.
+# Kevin(5f) A40503 - 2018.11
+
 IP=$(ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p')
 PASS=$( kubectl get secret --namespace default mq-rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base64 --decode )
 
