@@ -19,7 +19,7 @@ $ curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/bin
 
 ## Install specific version
 ```shell
-$  apt-get install -qy kubelet=1.11.2-00 kubectl=1.11.2-00 kubeadm=1.11.2-00
+$  apt-get install -qy kubelet=1.11.3-00 kubectl=1.11.3-00 kubeadm=1.11.3-00
 ```
 
 # kubeadm reset
