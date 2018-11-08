@@ -1,5 +1,13 @@
 # OFFLINE Deploy Steps
 
+## 0. Change Registry Host in `yaml`
+
+The script will find `*-from-registry.yaml` files and change image registry.
+
+```shell
+$ sh changeRegistryHost.sh
+```
+
 ## 1. Volume & Secret
 - See [Deploy Volume](./Volume#deploy-volume)
 - See [Deploy Secret](./Secret#deploy-secret)
