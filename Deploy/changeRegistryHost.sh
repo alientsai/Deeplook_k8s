@@ -1,6 +1,6 @@
 #!/bin/bash
 # For changing yaml's registry host
-# Kevin(5f) A40503 - 2018.11
+# Kevin(5f) A40503 - 2018.11 
 
 IP=$(ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p')
 ORG=140.96.29.86
