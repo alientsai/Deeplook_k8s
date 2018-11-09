@@ -5,7 +5,7 @@
 Use `helm` install ingress controller.
 
 ```shell
-$ helm install ../Helm-Charts/nginx-imgress-0.23.0/ --name ing -f values.yaml
+$ helm install ../Helm-Charts/nginx-ingress-0.23.0/ --name ing -f values.yaml
 ```
 The detail can see [kube apphub stable/nginx-ingress](https://hub.kubeapps.com/charts/stable/nginx-ingress)
 
@@ -14,7 +14,7 @@ The detail can see [kube apphub stable/nginx-ingress](https://hub.kubeapps.com/c
 Use `helm` install ingress controller.
 
 ```shell
-$ helm install ../Helm-Charts/nginx-imgress-0.23.0/ --name ing -f values-from-registry.yaml
+$ helm install ../Helm-Charts/nginx-ingress-0.23.0/ --name ing -f values-from-registry.yaml
 ```
 
 ## Check Ingress controller is working
