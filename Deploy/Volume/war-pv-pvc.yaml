@@ -7,7 +7,7 @@ spec:
     storage: 100Gi
   accessModes:
     - ReadWriteOnce
-  storageClassName: class-maven
+  storageClassName: class-war
   hostPath:
     path: "/warDeeplook"
 ---
