@@ -53,7 +53,9 @@ Install driver:
 $ sudo chmod +x NVIDIA-Linux-x86_64-390.87.run
 $ sudo ./NVIDIA-Linux-x86_64-390.87.run -no-x-check -no-nouveau-check -no-opengl-files
 ```
-
+Reference: 
+- https://blog.csdn.net/CosmosHua/article/details/76644029
+- https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07
 <!-- On packages folder exec this command: -->
 
 <!-- ```shell
@@ -85,9 +87,6 @@ apt -f install nvidia-container-runtime-hook_1.4.0-1_amd64.deb
 dpkg -i nvidia-container-runtime_2.0.0+docker18.06.1-1_amd64.deb
 apt -f install ./nvidia-docker2_2.0.3+docker18.06.1-1_all.deb
 ```
-Reference: 
-- https://blog.csdn.net/CosmosHua/article/details/76644029
-- https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07
 
 ### 2.5 Install kubernetes 1.11.3 packages
 
