@@ -68,13 +68,18 @@ $ ary=$(find ./ -iname "*.deb" | sort -n \;);for file in $ary; do dpkg -i $file;
 On packages folder exec this command:
 
 ```shell
-$ tar -zxvf ./helm/helm-v2.10.0-rc.1-linux-amd64.tar.gz && mv ./helm/linux-amd64/helm /usr/local/bin/helm
+$ tar -zxvf helm-v2.10.0-rc.1-linux-amd64.tar.gz && mv linux-amd64/helm /usr/local/bin/helm
 ```
 
 ### 2.4 Install docker
 
 ```shell
 apt -f install ./docker-ce_18.06.1~ce~3-0~ubuntu_amd64.deb
+```
+Check:
+
+```shell
+helm help
 ```
 
 ### 2.5 Install nv-docker
@@ -107,19 +112,6 @@ dpkg -i ebtables_2.0.10.4-3.4ubuntu2.16.04.2_amd64.deb
 dpkg -i kubelet_1.11.3-00_amd64.deb
 dpkg -i cri-tools_1.12.0-00_amd64.deb
 dpkg -i kubeadm_1.11.3-00_amd64.deb
-```
-
-### 2.6 Install helm
-
-```shell
-$ tar -zxvf helm-v2.10.0-rc.1-linux-amd64.tar.gz
-$ mv linux-amd64/helm /usr/local/bin/helm
-```
-
-Check:
-
-```shell
-helm help
 ```
 
 ## 3. Setting IP address
