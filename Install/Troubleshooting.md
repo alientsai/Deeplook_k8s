@@ -106,3 +106,16 @@ $ tr -d '\r' < ${file} > {file.unix}
 ```
 
 Ref: https://blog.csdn.net/CodyGuo/article/details/72811173
+
+# Install specific nvidia-docker2 version
+
+## Check available version
+```shell
+$ apt-cache madison nvidia-docker2
+```
+
+## Install specific version
+
+```shell
+$ apt-get install -y nvidia-docker2=2.0.3+docker18.06.1-1
+```
