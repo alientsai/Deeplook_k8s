@@ -84,3 +84,25 @@ GRANT ALL ON SCHEMA public TO public;
 ```shell
 $ docker rm $(docker ps -a -q)
 ```
+
+# Dos file convert to Unix file
+**vim :**
+```shell
+$ :setfileformat=unix
+# or
+$ :set ff=unix
+```
+**awk :**
+```shell
+$ awk '{sub("\r$", "", $0);print $0}' ${file} > ${file.unix}
+```
+**sed :**
+```shell
+$ sed -i 's/.$//g' ${file}
+```
+**tr :**
+```shell
+$ tr -d '\r' < ${file} > {file.unix}
+```
+
+Ref: https://blog.csdn.net/CodyGuo/article/details/72811173
