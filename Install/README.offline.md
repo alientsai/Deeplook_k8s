@@ -141,17 +141,32 @@ gateway 10.10.10.1
 You can download [`master images`](https://mega.nz/#!ANVSzCRC!YjP2F45WyO633Id9R9QBfFHqnrAlSQV76b46Tl3uihU) and [`workerWithGPU images`](https://mega.nz/#!0YUy3K6D!UtveWIpxnZheAdQEL--Xg9zWiStWUvkvMejBliS4gOo)
 
 ### 4.2 Import images
+Import image on `every node`
 See [Load ALL images](./DockerImage.md#load-all-images)
 
-## 4. Kubernetes
-See [Kubernetes.md](./Kubernetes.md)
+## 5. Kubernetes
 
-## 5. GPU for Kubernetes
+### 5.1 Initializing master
+See [Initializing master](./Kubernetes.md#3-initializing-master)
+
+### 5.2 Config kubectl
+See [Config kubectl](./Kubernetes.md#4-config-kubectl)
+
+### 5.3 Install CNI
+See [Install CNI](./Kubernetes.md#6-install-cni)
+
+### 5.4 Install Worker
+See [Install Worker](./Kubernetes.md#install-minion-worker)
+
+### 5.5 Setting labels
+See [Setting labels](./Kubernetes.md#7-setting-labels)
+
+## 6. GPU for Kubernetes
 See [GPUforKubernetes.md](./GPUforKubernetes.md)
 
-## 6. Helm (Master)
+## 7. Helm (Master)
 > Use RBAC install
-See [Helm.md](./Helm.md) 
+See [Helm offline install](./#rbac-offline-install) 
 
 ## Troubleshooting
 See [Troubleshooting](./Troubleshooting.md)
