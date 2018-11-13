@@ -152,13 +152,16 @@ See [Initializing master](./Kubernetes.md#3-initializing-master)
 ### 5.2 Config kubectl
 See [Config kubectl](./Kubernetes.md#4-config-kubectl)
 
-### 5.3 Install CNI
+### 5.3 Setting KUBECONFIG
+See [Setting KUBECONFIG](./Kubernetes.md#5-setting-kubeconfig)
+
+### 5.4 Install CNI
 See [Install CNI](./Kubernetes.md#6-install-cni)
 
-### 5.4 Install Worker
+### 5.5 Install Worker
 See [Install Worker](./Kubernetes.md#install-minion-worker)
 
-### 5.5 Setting labels
+### 5.6 Setting labels
 See [Setting labels](./Kubernetes.md#7-setting-labels)
 
 ## 6. GPU for Kubernetes
