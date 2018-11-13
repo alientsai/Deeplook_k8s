@@ -169,7 +169,7 @@ See [GPUforKubernetes.md](./GPUforKubernetes.md)
 
 ## 7. Helm (Master)
 > Use RBAC install
-See [Helm offline install](./#rbac-offline-install) 
+See [Helm offline install](./Helm.md#rbac-offline-install) 
 
 ## Troubleshooting
 See [Troubleshooting](./Troubleshooting.md)
