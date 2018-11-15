@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      nodeSelector:
+        machine: storage
+      containers:
+      - name: nginx
+        image: 140.96.29.86:31115/nginx:1.7.9
+        lifecycle:
+          postStart:
+            exec:
+              command: ["bin/bash","-c","ln -s -f /root/tmp_config/nginx.conf /etc/nginx/nginx.conf && /etc/init.d/nginx reload"]
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: media-root
+          mountPath: /usr/share/nginx/html
+        - name: nginx-config
+          mountPath: /root/tmp_config
+      volumes:
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-nfs
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+          items:
+          - key: nginx.conf
+            path: nginx.conf
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: nginx

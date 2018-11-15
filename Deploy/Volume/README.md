@@ -18,9 +18,9 @@ $ kubectl create -f ./
 |pv-media|100Gi|/deeplook_media|class-media|
 |pv-nfs|100Gi|N/A (pvc-media)|class-nfs|
 |pv-nfs-maven|100Gi|N/A (pvc-maven)|class-nfs-maven|
+|pv-nfs-war|100Gi|N/A (pvc-war)|class-nfs-war|
 
 ### PersistentVolumeClaim
-
 |name|requests|storageClassName|
 |-|-|-|
 |pvc-cityeyes|100Gi|class-cityeyes|
@@ -32,6 +32,7 @@ $ kubectl create -f ./
 |pvc-media|100Gi|class-media|
 |pvc-nfs|100Gi|class-nfs|
 |pvc-nfs-maven|100Gi|class-nfs-maven|
+|pvc-nfs-war|100Gi|class-nfs-war|
 
 ## Check pv, pvc
 

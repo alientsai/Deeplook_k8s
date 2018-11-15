@@ -16,7 +16,7 @@ The files `es-service.yaml`, `es-statefulset.yaml`, `fluentd-es-configmap.yaml`,
 ## Deploy
 
 ```shel
-$ kubectl create -f ./
+$ kubectl create -f es-service.yaml,es-statefulset.yaml,fluentd-es-configmap.yaml,fluentd-es-ds.yaml,kibana-deployment.yaml,kibana-service.yaml,rbac.yaml
 ```
 
 ## Get url

@@ -19,7 +19,7 @@ $ curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/bin
 
 ## Install specific version
 ```shell
-$  apt-get install -qy kubelet=1.11.2-00 kubectl=1.11.2-00 kubeadm=1.11.2-00
+$  apt-get install -qy kubelet=1.11.3-00 kubectl=1.11.3-00 kubeadm=1.11.3-00
 ```
 
 # kubeadm reset
@@ -83,4 +83,39 @@ GRANT ALL ON SCHEMA public TO public;
 ## Delete all container
 ```shell
 $ docker rm $(docker ps -a -q)
+```
+
+# Dos file convert to Unix file
+**vim :**
+```shell
+$ :setfileformat=unix
+# or
+$ :set ff=unix
+```
+**awk :**
+```shell
+$ awk '{sub("\r$", "", $0);print $0}' ${file} > ${file.unix}
+```
+**sed :**
+```shell
+$ sed -i 's/.$//g' ${file}
+```
+**tr :**
+```shell
+$ tr -d '\r' < ${file} > {file.unix}
+```
+
+Ref: https://blog.csdn.net/CodyGuo/article/details/72811173
+
+# Install specific nvidia-docker2 version
+
+## Check available version
+```shell
+$ apt-cache madison nvidia-docker2
+```
+
+## Install specific version
+
+```shell
+$ apt-get install -y nvidia-docker2=2.0.3+docker18.06.1-1
 ```

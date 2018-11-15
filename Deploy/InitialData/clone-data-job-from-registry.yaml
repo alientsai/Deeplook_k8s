@@ -1,0 +1,54 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: clone-data
+spec:
+  template:
+    spec:
+      nodeSelector:
+        machine: storage
+      containers:
+      - name: data
+        image: 140.96.29.86:31115/aquamars00/deeplook_init_data:1.1
+        command: ["sh",  "-c"]
+        args:
+          - cp -r /tmp/pgBackup_paas/. /pgBackup_paas;
+            cp -r /tmp/pgBackup_cityeyes/. /pgBackup_cityeyes;
+            cp -r /tmp/mapBackup/. /mapBackup;
+            cp -r /tmp/deeplook_media/. /deeplook_media;
+            cp -r /tmp/mavenRepo/. /mavenRepo;
+            cp -r /tmp/mysqlBackup_acl/. /mysqlBackup_acl;
+        volumeMounts:
+        - name: map-data
+          mountPath: /mapBackup
+        - name: maven-repo
+          mountPath: /mavenRepo
+        - name: media-root
+          mountPath: /deeplook_media
+        - name: cityeyes-db
+          mountPath: /pgBackup_cityeyes
+        - name: paas-db
+          mountPath: /pgBackup_paas
+        - name: acl-db
+          mountPath: /mysqlBackup_acl
+      volumes:
+      - name: map-data
+        persistentVolumeClaim:
+          claimName: pvc-map
+      - name: maven-repo
+        persistentVolumeClaim:
+          claimName: pvc-maven
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-media
+      - name: paas-db
+        persistentVolumeClaim:
+          claimName: pvc-paas
+      - name: cityeyes-db
+        persistentVolumeClaim:
+          claimName: pvc-cityeyes
+      - name: acl-db
+        persistentVolumeClaim:
+          claimName: pvc-acl
+      restartPolicy: Never
+  backoffLimit: 2

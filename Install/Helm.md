@@ -32,6 +32,12 @@ $ kubectl create -f ./helm_rbac/rbac-config.yaml
 $ helm init --service-account tiller
 ```
 
+### RBAC Offline install
+```shell
+$ kubectl create -f ./helm_rbac/rbac-config.yaml
+$ helm init --service-account tiller --skip-refresh
+```
+
 <!-- ### Basic install
 Bascially, You only need:
 ```shell
