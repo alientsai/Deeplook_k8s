@@ -1,5 +1,7 @@
 # Deploy Steps
 
+> Offline Deplioy please follow this steps: **[Offline Install](./README.offline.md)**
+
 ## 1. Ingress
 
 - See [Ingress](./Ingress/README.md)
