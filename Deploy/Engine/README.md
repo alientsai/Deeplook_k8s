@@ -18,6 +18,12 @@ $ kubectl create -f ./merge/engine_merge.yaml
 $ watch kubectl logs --tail=55 -lapp=engine-merge -c engine-merge-agent
 ```
 
+## Deploy merge engine form registry
+
+```shell
+$ kubectl create -f ./merge/engine_merge-from-registry.yaml
+```
+
 ## Engine infomation
 |Engine|CNName|Image|
 |-|-|-|

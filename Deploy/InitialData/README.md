@@ -4,17 +4,24 @@ This is a kubernetes job.
 
 Idea: Make a image have initial data. Use kubernetes job to copy data to pvc.
 
+
+## Create job
 ```sh
-$ kubectl create -f ./
+$ kubectl create -f clone-data-job.yaml
 ```
 
-Check job
+## Create job from registry
+```sh
+$ kubectl create -f clone-data-job-from-registry.yaml
+```
+
+## Check job
 
 ```sh
 $ kubectl get job
 ```
 
-Check job's pod status
+## Check job's pod status
 
 ```sh
 $ kubectl get po
@@ -23,7 +30,7 @@ $ kubectl get po
 When job's pod status `completed` then delete job.
 
 ```sh
-$ kubectl delete -f ./
+$ kubectl delete -f clone-data-job.yaml
 ```
 ## Image infomation
 |Image|

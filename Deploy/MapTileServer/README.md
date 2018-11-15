@@ -6,6 +6,12 @@
 $ kubectl create -f mapServer-deployment.yaml
 ```
 
+## Deploy from registry
+
+```shell
+$ kubectl create -f mapServer-deployment-from-registry.yaml
+```
+
 ## Remove MapTile Server
 
 ```shell

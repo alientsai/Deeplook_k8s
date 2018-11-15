@@ -26,11 +26,22 @@ $ kubectl get configmap acl-config -o yaml
 $ kubectl create -f ./acl/acl.yaml
 ```
 
+### Deploy tomcat for acl (from registry)
+
+```shell
+$ kubectl create -f ./acl/acl-from-registry.yaml
+```
+
 ## Deploy Tomcat for paas & deeplook
 
 ### Deploy paas (from image)
 ```shell
 $ kubectl create -f ./paas/paas.yaml
+```
+
+### Deploy paas (from registry)
+```shell
+$ kubectl create -f ./paas/paas-deploy-from-registry.yaml
 ```
 
 > Paas tomcat logs
@@ -45,6 +56,12 @@ $ kubectl create -f ./paas/paas.yaml
 
 ```shell
 $ kubectl create -f ./deeplook/deeplook-deploy-from-code.noSamba.yaml
+```
+
+### Deploy deeplook (from registry)
+> Need put `CityEyes.war` on `/warDeeplook`
+```shell
+$ kubectl create -f ./deeplook/deeplook-deploy-from-registry.yaml
 ```
 
 > Deeplook build logs

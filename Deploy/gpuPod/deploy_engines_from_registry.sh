@@ -1,5 +1,5 @@
 #!/bin/bash
-# Dynamic create engine
+# Dynamic create engine from registry
 # Kevin(5f) A40503 - 2018.11 
 
 #########################################################################################
@@ -68,10 +68,10 @@ do
     mv ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config.properties ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/config_${i}.properties
 
     #Duplicate the deploy engine yaml and modify arguments
-    cp ./engine/${ENGINE}/engine_${ENGINE}.yaml ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-${i}.yaml
-    sed -i "s|engine-${ENGINE}|engine-${ENGINE}-${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-${i}.yaml    
+    cp ./engine/${ENGINE}/engine_${ENGINE}-from-registry.yaml ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-from-registry-${i}.yaml
+    sed -i "s|engine-${ENGINE}|engine-${ENGINE}-${i}|g" ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-from-registry-${i}.yaml    
 
     #Deploy engine
-    kubectl create -f ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-${i}.yaml
+    kubectl create -f ./engine/${ENGINE}/${AUTO_GEN_FOLDER}/engine_${ENGINE}-from-registry-${i}.yaml
     echo
 done

@@ -49,9 +49,14 @@ $ sudo swapoff -a
 > 
 > Change `/etc/fstab`, comment `swap` then `reboot`>  
 
-Initial from kubeadm
+Initial from kubeadm :
 ```shell
 $ kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${Master IP}
+```
+
+Initial from kubeadm with specific version and skip preflight (Offline):
+```shell
+$ kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=${Master IP} --kubernetes-version=v1.11.3 --ignore-preflight-errors=all
 ```
 
 ### 4. Config kubectl

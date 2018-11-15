@@ -23,7 +23,8 @@ $ kubectl get configmap engine-classify -o yaml
 
 ## Deploy engine from script
 
-Execute script `deploy_engines.sh` for deploying multi engines.
+Execute script `deploy_engines.sh` for deploying multi engines.\
+(Offline deploy, use `deploy_engines_from_registry.sh`)
 
 ### Step 1: Change privilege of script
 

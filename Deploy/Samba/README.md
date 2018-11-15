@@ -9,6 +9,11 @@ Use `docker` deploy. \
 $ docker run -it -p 139:139 -p 445:445 -p 137:137/udp -p 138:138/udp --name samba -v /deeplook_media/:/deeplook_media -v /Deeplook_k8s/Deploy/Samba/conf/:/etc/samba/  -d dperson/samba -s "public;/share"
 ```
 
+Image from registry :
+```shell
+$ docker run -it -p 139:139 -p 445:445 -p 137:137/udp -p 138:138/udp --name samba -v /deeplook_media/:/deeplook_media -v /Deeplook_k8s/Deploy/Samba/conf/:/etc/samba/  -d 140.96.29.86:31115/dperson/samba -s "public;/share"
+```
+
 ### Mount samba on linux
 
 ```shell

@@ -2,11 +2,21 @@
 
 ## ACL database
 
+### ACL database deploy
+
 ```shell
 $ kubectl create -f ./acl/acl-database-deploy.yaml
 ```
 
+### ACL database deploy from registry
+```shell
+$ kubectl create -f ./acl/acl-database-deploy-from-registry.yaml
+```
+
 ## Cityeyes database
+
+### Cityeyes database deploy
+
 Use `Helm` install.
 ```shell
 $ helm install --name cityeyes -f cityeyes/values.yaml ../Helm-Charts/postgresql-0.18.0/
@@ -14,7 +24,16 @@ $ helm install --name cityeyes -f cityeyes/values.yaml ../Helm-Charts/postgresql
 
  The detail can see [kube apphub stable/postgresql](https://hub.kubeapps.com/charts/stable/postgresql)
 
+### Cityeyes database deploy from registry
+
+Use `Helm` install.
+```shell
+$ helm install --name cityeyes -f cityeyes/values-from-registry.yaml ../Helm-Charts/postgresql-0.18.0/
+```
+
 ## PaaS database
+
+### PaaS database deploy
 Use `Helm` install.
 ```shell
 $ helm install --name paas -f paas/values.yaml ../Helm-Charts/postgresql-0.18.0/
@@ -22,6 +41,12 @@ $ helm install --name paas -f paas/values.yaml ../Helm-Charts/postgresql-0.18.0/
 
  The detail can see [kube apphub stable/postgresql](https://hub.kubeapps.com/charts/stable/postgresql)
 
+### PaaS database deploy from registry
+
+Use `Helm` install.
+```shell
+$ helm install --name paas -f paas/values-from-registry.yaml ../Helm-Charts/postgresql-0.18.0/
+```
 ## Expose database
 
 ```shell

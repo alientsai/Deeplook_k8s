@@ -4,8 +4,7 @@ The deploy inculde `heapster`, `grafana` and `influxdb`.
 The yaml files from [kubernetes/heapster][heapster].
 
 ```shell
-$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-$ kubectl create -f ./
+$ kubectl create -f admin-user.yaml,kubernetes-dashboard.yaml,grafana.yaml,heapster.yaml,influxdb.yaml
 ```
 
 ## Get token for Dashboard
@@ -17,7 +16,7 @@ $ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | g
 
 ## Access Dashboard
 
-`http://<master-ip>:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
+`https://<master-ip>:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
 
 ```
 https://140.96.29.86:6443/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/

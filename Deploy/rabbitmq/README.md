@@ -8,6 +8,12 @@ $ helm install --name mq -f values.yaml ../Helm-Charts/rabbitmq-1.1.9/
  
 The detail can see [kube apphub stable/rabbitmq][1]
 
+## Using Helm install from registry
+ 
+```shell
+$ helm install --name mq -f values-from-registry.yaml ../Helm-Charts/rabbitmq-1.1.9/
+```
+
 ## Expose manage port
 
 ```shell
