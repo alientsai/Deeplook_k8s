@@ -17,7 +17,7 @@ $ vim /etc/network/interfaces
 # Add follows :
 # dns-nameservers 8.8.8.8
 # dns-nameservers 8.8.8.4
-$ reboot
+$ /etc/init.d/networking restart
 ```
 
 ## 0. Clone this project

@@ -123,6 +123,7 @@ iface enp3s0 inet static
 address 10.10.10.25
 netmask 255.255.255.0
 gateway 10.10.10.1
+$ /etc/init.d/networking restart
 ```
 
 ## 4. Import docker images
