@@ -22,6 +22,12 @@ We will be editing the docker daemon config file which is usually present at `/e
     }
 }
 ```
+
+After setting need restart docker
+```shell
+$ server docker restart
+```
+
 ## 2. Setting feature gate on kubeadm
 If your Kubernetes cluster is deployed using kubeadm and your nodes are running systemd you will have to open the kubeadm
 systemd unit file at `/etc/systemd/system/kubelet.service.d/10-kubeadm.conf` and add the following environment argument:
