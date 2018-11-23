@@ -18,7 +18,7 @@ spec:
         machine: storage
       containers:
       - name: cityeyes
-        image: 140.96.29.86:31115/deeplook_cityeyes:1.1.0
+        image: 140.96.29.86:31115/aquamars00/deeplook_cityeyes:1.1.0
         lifecycle:
           postStart:
             exec:
