@@ -39,3 +39,16 @@ spec:
       - name: media-root
         persistentVolumeClaim:
           claimName: pvc-nfs
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deeplook
+  labels:
+    app: deeplook
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+  selector:
+    app: deeplook
