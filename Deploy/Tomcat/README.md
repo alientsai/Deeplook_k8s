@@ -64,6 +64,11 @@ $ kubectl create -f ./deeplook/deeplook-deploy-from-code.noSamba.yaml
 $ kubectl create -f ./deeplook/deeplook-deploy-from-registry.yaml
 ```
 
+### Deploy deeplook from deeplook_cityeyes image (from registry)
+```shell
+$ kubectl create -f ./deeplook/deeplook-deploy-from-registry.v2.yaml
+```
+
 > Deeplook build logs
 >```shell
 >$ watch kubectl logs --tail=55 -lapp=deeplook -c build-war
