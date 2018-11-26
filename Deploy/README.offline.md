@@ -15,7 +15,11 @@ $ sh changeRegistryHost.sh
 ## 2. Docker Registry
 
 ### 2.1 Unpacking registryBackup
-You can download `registryBackup.tar` from [link](https://mega.nz/#!9EFAwYKJ!WXacgqo5V6c0oGAld22WzQrrKybxQ62FbKCilEo3T3w)
+> The link already updated! \
+> This registry has 37 registries 
+> 
+You can download `registryBackup.tar` from [link](https://mega.nz/#!AANVXKRI!-7C012UIWFvsu8YR2N8FZp5qGpIdGQXAqThO70IPfUI)
+<!-- (https://mega.nz/#!9EFAwYKJ!WXacgqo5V6c0oGAld22WzQrrKybxQ62FbKCilEo3T3w) -->
 
 The `registryBackup.tar` must upacking to `/` . (the docker registry existed node)
 
