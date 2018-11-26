@@ -28,6 +28,49 @@ Unpacking:
 $ tar xvf registryBackup.tar
 ```
 
+#### Repository list
+
+```json
+{"repositories":[
+  "alpine",
+  "alpine/git",
+  "aquamars00/deeplook_acl",
+  "aquamars00/deeplook_acl_database",
+  "aquamars00/deeplook_cityeyes",
+  "aquamars00/deeplook_engine_classify",
+  "aquamars00/deeplook_engine_clustering",
+  "aquamars00/deeplook_engine_merge",
+  "aquamars00/deeplook_init_data",
+  "aquamars00/deeplook_paas",
+  "bitnami/rabbitmq",
+  "busybox",
+  "coreos/configmap-reload",
+  "coreos/flannel","coreos/grafana-watcher",
+  "coreos/hyperkube",
+  "coreos/kube-state-metrics",
+  "coreos/prometheus-config-reloader",
+  "coreos/prometheus-operator",
+  "defaultbackend",
+  "dpage/pgadmin4",
+  "dperson/samba",
+  "elasticsearch",
+  "fluentd-elasticsearch",
+  "google_containers/volume-nfs",
+  "heapster-amd64",
+  "heapster-grafana-amd64",
+  "heapster-influxdb-amd64",
+  "kibana/kibana-oss",
+  "klokantech/openmaptiles-server",
+  "kubernetes-dashboard-amd64",
+  "kubernetes-helm/tiller",
+  "maven",
+  "nginx",
+  "nginx-ingress-controller",
+  "postgres",
+  "tomcat"]
+}
+```
+
 ### 2.2 Enable Insecure registry
 **Each Node MUST enable insecure registry**
 - See [Enable Insecure registry](./DockerRegistry#enable-insecure-registry)
