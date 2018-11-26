@@ -149,7 +149,7 @@ See [Deploy ACL](./Tomcat#deploy-tomcat-for-acl-from-registry)
 - [Deploy paas (from registry)](./Tomcat/README.md#deploy-paas-from-registry)
 
 ### 10.2 Deploy Deeplook
-- [Deploy deeplook (from registry)](./Tomcat/README.md#deploy-deeplook-from-registry)
+- [Deploy deeplook (from registry)](./Tomcat/README.md#deploy-deeplook-from-deeplook_cityeyes-image-from-registry)
 
 ## 11. Merge Engine
 
