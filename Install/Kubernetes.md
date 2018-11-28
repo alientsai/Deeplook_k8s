@@ -152,6 +152,7 @@ $ kubectl get node --show-labels
 ```shell
 $ apt-get install -y bash-completion
 $ echo "source <(kubectl completion bash)" >> ~/.bashrc
+$ echo "source /etc/bash_completion" >> ~/.bashrc
 $ source /etc/bash_completion
 $ source <(kubectl completion bash)
 ```
