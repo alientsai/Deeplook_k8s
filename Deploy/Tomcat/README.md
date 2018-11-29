@@ -49,6 +49,12 @@ $ kubectl create -f ./paas/paas-deploy-from-registry.yaml
 >$ watch kubectl logs --tail=55 -lapp=paas
 >```
 
+### Deploy deeplook (from image)
+> Need change the `IP` in `yaml` !
+
+```shell
+$ kubectl create -f ./deeplook/deeplook-deploy-from-image.yaml
+```
 
 ### Deploy deeplook (from code)
 

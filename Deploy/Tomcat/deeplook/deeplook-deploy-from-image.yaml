@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deeplook
+  labels:
+    app: deeplook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deeplook
+  template:
+    metadata:
+     labels:
+       app: deeplook
+    spec:
+      nodeSelector:
+        machine: storage
+      containers:
+      - name: cityeyes
+        image: aquamars00/deeplook_cityeyes:1.1.0
+        lifecycle:
+          postStart:
+            exec:
+              command: 
+              - /bin/bash
+              - -c
+              - sed -i 's|10.10.10.25|140.96.29.86|g' /usr/local/tomcat/webapps/CityEyes/OpenLayers/GlobleVal.js 
+                && sed -i 's|10.10.10.25|140.96.29.86|g' /usr/local/tomcat/webapps/CityEyes/WEB-INF/classes/config.properties
+        env:
+        - name: CATALINA_OPTS
+          value: "-Duser.timezone=Asia/Taipei"
+        volumeMounts:
+        - name: media-root
+          mountPath: /var/www/html/
+        ports:
+        - containerPort: 8080
+      volumes:
+      - name: media-root
+        persistentVolumeClaim:
+          claimName: pvc-nfs
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deeplook
+  labels:
+    app: deeplook
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8080
+  selector:
+    app: deeplook
