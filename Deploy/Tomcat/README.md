@@ -52,6 +52,7 @@ $ kubectl create -f ./paas/paas-deploy-from-registry.yaml
 
 ### Deploy deeplook (from code)
 
+> **The clone token already unuseful need change to useful token!** \
 > Need change the `IP` in `yaml` !
 
 ```shell
