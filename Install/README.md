@@ -42,6 +42,23 @@ The more detail can referrer [install-kubadm/installing-docker][k8s-install-dock
 
 ## 2. nvidia Driver (GPU Node)
 
+> Driver version relative cuda version \
+> https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html
+
+CUDA Toolkit and Compatible Driver Versions:
+|CUDA Toolkit|Linux x86_64 Driver Version|Windows x86_64 Driver Version|
+|-|-|-|
+|CUDA 10.0.130|>= 410.48|>= 411.31
+|CUDA 9.2 (9.2.148 Update 1)|>= 396.37|>= 398.26
+|CUDA 9.2 (9.2.88)|>= 396.26|>= 397.44
+|CUDA 9.1 (9.1.85)|>= 390.46|>= 391.29
+|CUDA 9.0 (9.0.76)|>= 384.81|>= 385.54
+|CUDA 8.0 (8.0.61 GA2)|>= 375.26|>= 376.51
+|CUDA 8.0 (8.0.44)|>= 367.48|>= 369.30
+|CUDA 7.5 (7.5.16)|>= 352.31|>= 353.66
+|CUDA 7.0 (7.0.28)|>= 346.46|>= 347.62
+
+
 Reference: 
 - https://blog.csdn.net/CosmosHua/article/details/76644029
 - https://gist.github.com/wangruohui/df039f0dc434d6486f5d4d098aa52d07
